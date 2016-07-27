@@ -1,0 +1,1520 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Fri Jul 22 15:04:28 2016
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_uart1
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _assert_failed
+                                     13 	.globl _CLK_GetClockFreq
+                                     14 	.globl _UART1_DeInit
+                                     15 	.globl _UART1_Init
+                                     16 	.globl _UART1_Cmd
+                                     17 	.globl _UART1_ITConfig
+                                     18 	.globl _UART1_HalfDuplexCmd
+                                     19 	.globl _UART1_IrDAConfig
+                                     20 	.globl _UART1_IrDACmd
+                                     21 	.globl _UART1_LINBreakDetectionConfig
+                                     22 	.globl _UART1_LINCmd
+                                     23 	.globl _UART1_SmartCardCmd
+                                     24 	.globl _UART1_SmartCardNACKCmd
+                                     25 	.globl _UART1_WakeUpConfig
+                                     26 	.globl _UART1_ReceiverWakeUpCmd
+                                     27 	.globl _UART1_ReceiveData8
+                                     28 	.globl _UART1_ReceiveData9
+                                     29 	.globl _UART1_SendData8
+                                     30 	.globl _UART1_SendData9
+                                     31 	.globl _UART1_SendBreak
+                                     32 	.globl _UART1_SetAddress
+                                     33 	.globl _UART1_SetGuardTime
+                                     34 	.globl _UART1_SetPrescaler
+                                     35 	.globl _UART1_GetFlagStatus
+                                     36 	.globl _UART1_ClearFlag
+                                     37 	.globl _UART1_GetITStatus
+                                     38 	.globl _UART1_ClearITPendingBit
+                                     39 ;--------------------------------------------------------
+                                     40 ; ram data
+                                     41 ;--------------------------------------------------------
+                                     42 	.area DATA
+                                     43 ;--------------------------------------------------------
+                                     44 ; ram data
+                                     45 ;--------------------------------------------------------
+                                     46 	.area INITIALIZED
+                                     47 ;--------------------------------------------------------
+                                     48 ; absolute external ram data
+                                     49 ;--------------------------------------------------------
+                                     50 	.area DABS (ABS)
+                                     51 ;--------------------------------------------------------
+                                     52 ; global & static initialisations
+                                     53 ;--------------------------------------------------------
+                                     54 	.area HOME
+                                     55 	.area GSINIT
+                                     56 	.area GSFINAL
+                                     57 	.area GSINIT
+                                     58 ;--------------------------------------------------------
+                                     59 ; Home
+                                     60 ;--------------------------------------------------------
+                                     61 	.area HOME
+                                     62 	.area HOME
+                                     63 ;--------------------------------------------------------
+                                     64 ; code
+                                     65 ;--------------------------------------------------------
+                                     66 	.area CODE
+                                     67 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 53: void UART1_DeInit(void)
+                                     68 ;	-----------------------------------------
+                                     69 ;	 function UART1_DeInit
+                                     70 ;	-----------------------------------------
+      000000                         71 _UART1_DeInit:
+                                     72 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 57: (void)UART1->SR;
+      000000 AE 52 30         [ 2]   73 	ldw	x, #0x5230
+      000003 F6               [ 1]   74 	ld	a, (x)
+                                     75 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 58: (void)UART1->DR;
+      000004 AE 52 31         [ 2]   76 	ldw	x, #0x5231
+      000007 F6               [ 1]   77 	ld	a, (x)
+                                     78 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 60: UART1->BRR2 = UART1_BRR2_RESET_VALUE;  /* Set UART1_BRR2 to reset value 0x00 */
+      000008 35 00 52 33      [ 1]   79 	mov	0x5233+0, #0x00
+                                     80 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 61: UART1->BRR1 = UART1_BRR1_RESET_VALUE;  /* Set UART1_BRR1 to reset value 0x00 */
+      00000C 35 00 52 32      [ 1]   81 	mov	0x5232+0, #0x00
+                                     82 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 63: UART1->CR1 = UART1_CR1_RESET_VALUE;  /* Set UART1_CR1 to reset value 0x00 */
+      000010 35 00 52 34      [ 1]   83 	mov	0x5234+0, #0x00
+                                     84 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 64: UART1->CR2 = UART1_CR2_RESET_VALUE;  /* Set UART1_CR2 to reset value 0x00 */
+      000014 35 00 52 35      [ 1]   85 	mov	0x5235+0, #0x00
+                                     86 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 65: UART1->CR3 = UART1_CR3_RESET_VALUE;  /* Set UART1_CR3 to reset value 0x00 */
+      000018 35 00 52 36      [ 1]   87 	mov	0x5236+0, #0x00
+                                     88 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 66: UART1->CR4 = UART1_CR4_RESET_VALUE;  /* Set UART1_CR4 to reset value 0x00 */
+      00001C 35 00 52 37      [ 1]   89 	mov	0x5237+0, #0x00
+                                     90 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 67: UART1->CR5 = UART1_CR5_RESET_VALUE;  /* Set UART1_CR5 to reset value 0x00 */
+      000020 35 00 52 38      [ 1]   91 	mov	0x5238+0, #0x00
+                                     92 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 69: UART1->GTR = UART1_GTR_RESET_VALUE;
+      000024 35 00 52 39      [ 1]   93 	mov	0x5239+0, #0x00
+                                     94 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 70: UART1->PSCR = UART1_PSCR_RESET_VALUE;
+      000028 35 00 52 3A      [ 1]   95 	mov	0x523a+0, #0x00
+      00002C 81               [ 4]   96 	ret
+                                     97 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 90: void UART1_Init(uint32_t BaudRate, UART1_WordLength_TypeDef WordLength, 
+                                     98 ;	-----------------------------------------
+                                     99 ;	 function UART1_Init
+                                    100 ;	-----------------------------------------
+      00002D                        101 _UART1_Init:
+      00002D 52 21            [ 2]  102 	sub	sp, #33
+                                    103 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 97: assert_param(IS_UART1_BAUDRATE_OK(BaudRate));
+      00002F AE 89 68         [ 2]  104 	ldw	x, #0x8968
+      000032 13 26            [ 2]  105 	cpw	x, (0x26, sp)
+      000034 A6 09            [ 1]  106 	ld	a, #0x09
+      000036 12 25            [ 1]  107 	sbc	a, (0x25, sp)
+      000038 4F               [ 1]  108 	clr	a
+      000039 12 24            [ 1]  109 	sbc	a, (0x24, sp)
+      00003B 24 11            [ 1]  110 	jrnc	00113$
+      00003D 90 AEr07rF3      [ 2]  111 	ldw	y, #___str_0+0
+      000041 4B 61            [ 1]  112 	push	#0x61
+      000043 5F               [ 1]  113 	clrw	x
+      000044 89               [ 2]  114 	pushw	x
+      000045 4B 00            [ 1]  115 	push	#0x00
+      000047 90 89            [ 2]  116 	pushw	y
+      000049 CDr00r00         [ 4]  117 	call	_assert_failed
+      00004C 5B 06            [ 2]  118 	addw	sp, #6
+      00004E                        119 00113$:
+                                    120 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 98: assert_param(IS_UART1_WORDLENGTH_OK(WordLength));
+      00004E 0D 28            [ 1]  121 	tnz	(0x28, sp)
+      000050 27 17            [ 1]  122 	jreq	00115$
+      000052 7B 28            [ 1]  123 	ld	a, (0x28, sp)
+      000054 A1 10            [ 1]  124 	cp	a, #0x10
+      000056 27 11            [ 1]  125 	jreq	00115$
+      000058 90 AEr07rF3      [ 2]  126 	ldw	y, #___str_0+0
+      00005C 4B 62            [ 1]  127 	push	#0x62
+      00005E 5F               [ 1]  128 	clrw	x
+      00005F 89               [ 2]  129 	pushw	x
+      000060 4B 00            [ 1]  130 	push	#0x00
+      000062 90 89            [ 2]  131 	pushw	y
+      000064 CDr00r00         [ 4]  132 	call	_assert_failed
+      000067 5B 06            [ 2]  133 	addw	sp, #6
+      000069                        134 00115$:
+                                    135 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 99: assert_param(IS_UART1_STOPBITS_OK(StopBits));
+      000069 0D 29            [ 1]  136 	tnz	(0x29, sp)
+      00006B 27 23            [ 1]  137 	jreq	00120$
+      00006D 7B 29            [ 1]  138 	ld	a, (0x29, sp)
+      00006F A1 10            [ 1]  139 	cp	a, #0x10
+      000071 27 1D            [ 1]  140 	jreq	00120$
+      000073 7B 29            [ 1]  141 	ld	a, (0x29, sp)
+      000075 A1 20            [ 1]  142 	cp	a, #0x20
+      000077 27 17            [ 1]  143 	jreq	00120$
+      000079 7B 29            [ 1]  144 	ld	a, (0x29, sp)
+      00007B A1 30            [ 1]  145 	cp	a, #0x30
+      00007D 27 11            [ 1]  146 	jreq	00120$
+      00007F 90 AEr07rF3      [ 2]  147 	ldw	y, #___str_0+0
+      000083 4B 63            [ 1]  148 	push	#0x63
+      000085 5F               [ 1]  149 	clrw	x
+      000086 89               [ 2]  150 	pushw	x
+      000087 4B 00            [ 1]  151 	push	#0x00
+      000089 90 89            [ 2]  152 	pushw	y
+      00008B CDr00r00         [ 4]  153 	call	_assert_failed
+      00008E 5B 06            [ 2]  154 	addw	sp, #6
+      000090                        155 00120$:
+                                    156 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 100: assert_param(IS_UART1_PARITY_OK(Parity));
+      000090 0D 2A            [ 1]  157 	tnz	(0x2a, sp)
+      000092 27 1D            [ 1]  158 	jreq	00131$
+      000094 7B 2A            [ 1]  159 	ld	a, (0x2a, sp)
+      000096 A1 04            [ 1]  160 	cp	a, #0x04
+      000098 27 17            [ 1]  161 	jreq	00131$
+      00009A 7B 2A            [ 1]  162 	ld	a, (0x2a, sp)
+      00009C A1 06            [ 1]  163 	cp	a, #0x06
+      00009E 27 11            [ 1]  164 	jreq	00131$
+      0000A0 90 AEr07rF3      [ 2]  165 	ldw	y, #___str_0+0
+      0000A4 4B 64            [ 1]  166 	push	#0x64
+      0000A6 5F               [ 1]  167 	clrw	x
+      0000A7 89               [ 2]  168 	pushw	x
+      0000A8 4B 00            [ 1]  169 	push	#0x00
+      0000AA 90 89            [ 2]  170 	pushw	y
+      0000AC CDr00r00         [ 4]  171 	call	_assert_failed
+      0000AF 5B 06            [ 2]  172 	addw	sp, #6
+      0000B1                        173 00131$:
+                                    174 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 101: assert_param(IS_UART1_MODE_OK((uint8_t)Mode));
+      0000B1 7B 2C            [ 1]  175 	ld	a, (0x2c, sp)
+      0000B3 A1 08            [ 1]  176 	cp	a, #0x08
+      0000B5 27 45            [ 1]  177 	jreq	00139$
+      0000B7 7B 2C            [ 1]  178 	ld	a, (0x2c, sp)
+      0000B9 A1 40            [ 1]  179 	cp	a, #0x40
+      0000BB 27 3F            [ 1]  180 	jreq	00139$
+      0000BD 7B 2C            [ 1]  181 	ld	a, (0x2c, sp)
+      0000BF A1 04            [ 1]  182 	cp	a, #0x04
+      0000C1 27 39            [ 1]  183 	jreq	00139$
+      0000C3 7B 2C            [ 1]  184 	ld	a, (0x2c, sp)
+      0000C5 A1 80            [ 1]  185 	cp	a, #0x80
+      0000C7 27 33            [ 1]  186 	jreq	00139$
+      0000C9 7B 2C            [ 1]  187 	ld	a, (0x2c, sp)
+      0000CB A1 0C            [ 1]  188 	cp	a, #0x0c
+      0000CD 26 03            [ 1]  189 	jrne	00314$
+      0000CF A6 01            [ 1]  190 	ld	a, #0x01
+      0000D1 21                     191 	.byte 0x21
+      0000D2                        192 00314$:
+      0000D2 4F               [ 1]  193 	clr	a
+      0000D3                        194 00315$:
+      0000D3 4D               [ 1]  195 	tnz	a
+      0000D4 26 26            [ 1]  196 	jrne	00139$
+      0000D6 4D               [ 1]  197 	tnz	a
+      0000D7 26 23            [ 1]  198 	jrne	00139$
+      0000D9 7B 2C            [ 1]  199 	ld	a, (0x2c, sp)
+      0000DB A1 44            [ 1]  200 	cp	a, #0x44
+      0000DD 27 1D            [ 1]  201 	jreq	00139$
+      0000DF 7B 2C            [ 1]  202 	ld	a, (0x2c, sp)
+      0000E1 A1 C0            [ 1]  203 	cp	a, #0xc0
+      0000E3 27 17            [ 1]  204 	jreq	00139$
+      0000E5 7B 2C            [ 1]  205 	ld	a, (0x2c, sp)
+      0000E7 A1 88            [ 1]  206 	cp	a, #0x88
+      0000E9 27 11            [ 1]  207 	jreq	00139$
+      0000EB 90 AEr07rF3      [ 2]  208 	ldw	y, #___str_0+0
+      0000EF 4B 65            [ 1]  209 	push	#0x65
+      0000F1 5F               [ 1]  210 	clrw	x
+      0000F2 89               [ 2]  211 	pushw	x
+      0000F3 4B 00            [ 1]  212 	push	#0x00
+      0000F5 90 89            [ 2]  213 	pushw	y
+      0000F7 CDr00r00         [ 4]  214 	call	_assert_failed
+      0000FA 5B 06            [ 2]  215 	addw	sp, #6
+      0000FC                        216 00139$:
+                                    217 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 102: assert_param(IS_UART1_SYNCMODE_OK((uint8_t)SyncMode));
+      0000FC 7B 2B            [ 1]  218 	ld	a, (0x2b, sp)
+      0000FE A4 88            [ 1]  219 	and	a, #0x88
+      000100 A1 88            [ 1]  220 	cp	a, #0x88
+      000102 27 18            [ 1]  221 	jreq	00167$
+      000104 7B 2B            [ 1]  222 	ld	a, (0x2b, sp)
+      000106 A4 44            [ 1]  223 	and	a, #0x44
+      000108 A1 44            [ 1]  224 	cp	a, #0x44
+      00010A 27 10            [ 1]  225 	jreq	00167$
+      00010C 7B 2B            [ 1]  226 	ld	a, (0x2b, sp)
+      00010E A4 22            [ 1]  227 	and	a, #0x22
+      000110 A1 22            [ 1]  228 	cp	a, #0x22
+      000112 27 08            [ 1]  229 	jreq	00167$
+      000114 7B 2B            [ 1]  230 	ld	a, (0x2b, sp)
+      000116 A4 11            [ 1]  231 	and	a, #0x11
+      000118 A1 11            [ 1]  232 	cp	a, #0x11
+      00011A 26 11            [ 1]  233 	jrne	00165$
+      00011C                        234 00167$:
+      00011C 90 AEr07rF3      [ 2]  235 	ldw	y, #___str_0+0
+      000120 4B 66            [ 1]  236 	push	#0x66
+      000122 5F               [ 1]  237 	clrw	x
+      000123 89               [ 2]  238 	pushw	x
+      000124 4B 00            [ 1]  239 	push	#0x00
+      000126 90 89            [ 2]  240 	pushw	y
+      000128 CDr00r00         [ 4]  241 	call	_assert_failed
+      00012B 5B 06            [ 2]  242 	addw	sp, #6
+      00012D                        243 00165$:
+                                    244 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 105: UART1->CR1 &= (uint8_t)(~UART1_CR1_M);  
+      00012D AE 52 34         [ 2]  245 	ldw	x, #0x5234
+      000130 F6               [ 1]  246 	ld	a, (x)
+      000131 A4 EF            [ 1]  247 	and	a, #0xef
+      000133 F7               [ 1]  248 	ld	(x), a
+                                    249 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 108: UART1->CR1 |= (uint8_t)WordLength;
+      000134 AE 52 34         [ 2]  250 	ldw	x, #0x5234
+      000137 F6               [ 1]  251 	ld	a, (x)
+      000138 1A 28            [ 1]  252 	or	a, (0x28, sp)
+      00013A AE 52 34         [ 2]  253 	ldw	x, #0x5234
+      00013D F7               [ 1]  254 	ld	(x), a
+                                    255 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 111: UART1->CR3 &= (uint8_t)(~UART1_CR3_STOP);  
+      00013E AE 52 36         [ 2]  256 	ldw	x, #0x5236
+      000141 F6               [ 1]  257 	ld	a, (x)
+      000142 A4 CF            [ 1]  258 	and	a, #0xcf
+      000144 F7               [ 1]  259 	ld	(x), a
+                                    260 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 113: UART1->CR3 |= (uint8_t)StopBits;  
+      000145 AE 52 36         [ 2]  261 	ldw	x, #0x5236
+      000148 F6               [ 1]  262 	ld	a, (x)
+      000149 1A 29            [ 1]  263 	or	a, (0x29, sp)
+      00014B AE 52 36         [ 2]  264 	ldw	x, #0x5236
+      00014E F7               [ 1]  265 	ld	(x), a
+                                    266 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 116: UART1->CR1 &= (uint8_t)(~(UART1_CR1_PCEN | UART1_CR1_PS  ));  
+      00014F AE 52 34         [ 2]  267 	ldw	x, #0x5234
+      000152 F6               [ 1]  268 	ld	a, (x)
+      000153 A4 F9            [ 1]  269 	and	a, #0xf9
+      000155 F7               [ 1]  270 	ld	(x), a
+                                    271 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 118: UART1->CR1 |= (uint8_t)Parity;  
+      000156 AE 52 34         [ 2]  272 	ldw	x, #0x5234
+      000159 F6               [ 1]  273 	ld	a, (x)
+      00015A 1A 2A            [ 1]  274 	or	a, (0x2a, sp)
+      00015C AE 52 34         [ 2]  275 	ldw	x, #0x5234
+      00015F F7               [ 1]  276 	ld	(x), a
+                                    277 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 121: UART1->BRR1 &= (uint8_t)(~UART1_BRR1_DIVM);  
+      000160 AE 52 32         [ 2]  278 	ldw	x, #0x5232
+      000163 F6               [ 1]  279 	ld	a, (x)
+      000164 35 00 52 32      [ 1]  280 	mov	0x5232+0, #0x00
+                                    281 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 123: UART1->BRR2 &= (uint8_t)(~UART1_BRR2_DIVM);  
+      000168 AE 52 33         [ 2]  282 	ldw	x, #0x5233
+      00016B F6               [ 1]  283 	ld	a, (x)
+      00016C A4 0F            [ 1]  284 	and	a, #0x0f
+      00016E F7               [ 1]  285 	ld	(x), a
+                                    286 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 125: UART1->BRR2 &= (uint8_t)(~UART1_BRR2_DIVF);  
+      00016F AE 52 33         [ 2]  287 	ldw	x, #0x5233
+      000172 F6               [ 1]  288 	ld	a, (x)
+      000173 A4 F0            [ 1]  289 	and	a, #0xf0
+      000175 F7               [ 1]  290 	ld	(x), a
+                                    291 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 128: BaudRate_Mantissa    = ((uint32_t)CLK_GetClockFreq() / (BaudRate << 4));
+      000176 CDr00r00         [ 4]  292 	call	_CLK_GetClockFreq
+      000179 1F 11            [ 2]  293 	ldw	(0x11, sp), x
+      00017B 1E 24            [ 2]  294 	ldw	x, (0x24, sp)
+      00017D 1F 1D            [ 2]  295 	ldw	(0x1d, sp), x
+      00017F 1E 26            [ 2]  296 	ldw	x, (0x26, sp)
+      000181 A6 04            [ 1]  297 	ld	a, #0x04
+      000183                        298 00339$:
+      000183 58               [ 2]  299 	sllw	x
+      000184 09 1E            [ 1]  300 	rlc	(0x1e, sp)
+      000186 09 1D            [ 1]  301 	rlc	(0x1d, sp)
+      000188 4A               [ 1]  302 	dec	a
+      000189 26 F8            [ 1]  303 	jrne	00339$
+      00018B 1F 1F            [ 2]  304 	ldw	(0x1f, sp), x
+      00018D 1E 1F            [ 2]  305 	ldw	x, (0x1f, sp)
+      00018F 89               [ 2]  306 	pushw	x
+      000190 1E 1F            [ 2]  307 	ldw	x, (0x1f, sp)
+      000192 89               [ 2]  308 	pushw	x
+      000193 1E 15            [ 2]  309 	ldw	x, (0x15, sp)
+      000195 89               [ 2]  310 	pushw	x
+      000196 90 89            [ 2]  311 	pushw	y
+      000198 CDr00r00         [ 4]  312 	call	__divulong
+      00019B 5B 08            [ 2]  313 	addw	sp, #8
+      00019D 1F 07            [ 2]  314 	ldw	(0x07, sp), x
+      00019F 17 05            [ 2]  315 	ldw	(0x05, sp), y
+                                    316 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 129: BaudRate_Mantissa100 = (((uint32_t)CLK_GetClockFreq() * 100) / (BaudRate << 4));
+      0001A1 CDr00r00         [ 4]  317 	call	_CLK_GetClockFreq
+      0001A4 89               [ 2]  318 	pushw	x
+      0001A5 90 89            [ 2]  319 	pushw	y
+      0001A7 4B 64            [ 1]  320 	push	#0x64
+      0001A9 5F               [ 1]  321 	clrw	x
+      0001AA 89               [ 2]  322 	pushw	x
+      0001AB 4B 00            [ 1]  323 	push	#0x00
+      0001AD CDr00r00         [ 4]  324 	call	__mullong
+      0001B0 5B 08            [ 2]  325 	addw	sp, #8
+      0001B2 1F 0C            [ 2]  326 	ldw	(0x0c, sp), x
+      0001B4 1E 1F            [ 2]  327 	ldw	x, (0x1f, sp)
+      0001B6 89               [ 2]  328 	pushw	x
+      0001B7 1E 1F            [ 2]  329 	ldw	x, (0x1f, sp)
+      0001B9 89               [ 2]  330 	pushw	x
+      0001BA 1E 10            [ 2]  331 	ldw	x, (0x10, sp)
+      0001BC 89               [ 2]  332 	pushw	x
+      0001BD 90 89            [ 2]  333 	pushw	y
+      0001BF CDr00r00         [ 4]  334 	call	__divulong
+      0001C2 5B 08            [ 2]  335 	addw	sp, #8
+      0001C4 51               [ 1]  336 	exgw	x, y
+      0001C5 17 03            [ 2]  337 	ldw	(0x03, sp), y
+      0001C7 02               [ 1]  338 	rlwa	x
+      0001C8 6B 01            [ 1]  339 	ld	(0x01, sp), a
+      0001CA 01               [ 1]  340 	rrwa	x
+      0001CB 9F               [ 1]  341 	ld	a, xl
+                                    342 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 131: UART1->BRR2 |= (uint8_t)((uint8_t)(((BaudRate_Mantissa100 - (BaudRate_Mantissa * 100)) << 4) / 100) & (uint8_t)0x0F); 
+      0001CC AE 52 33         [ 2]  343 	ldw	x, #0x5233
+      0001CF 88               [ 1]  344 	push	a
+      0001D0 F6               [ 1]  345 	ld	a, (x)
+      0001D1 6B 1D            [ 1]  346 	ld	(0x1d, sp), a
+      0001D3 84               [ 1]  347 	pop	a
+      0001D4 88               [ 1]  348 	push	a
+      0001D5 1E 08            [ 2]  349 	ldw	x, (0x08, sp)
+      0001D7 89               [ 2]  350 	pushw	x
+      0001D8 1E 08            [ 2]  351 	ldw	x, (0x08, sp)
+      0001DA 89               [ 2]  352 	pushw	x
+      0001DB 4B 64            [ 1]  353 	push	#0x64
+      0001DD 5F               [ 1]  354 	clrw	x
+      0001DE 89               [ 2]  355 	pushw	x
+      0001DF 4B 00            [ 1]  356 	push	#0x00
+      0001E1 CDr00r00         [ 4]  357 	call	__mullong
+      0001E4 5B 08            [ 2]  358 	addw	sp, #8
+      0001E6 1F 1B            [ 2]  359 	ldw	(0x1b, sp), x
+      0001E8 17 19            [ 2]  360 	ldw	(0x19, sp), y
+      0001EA 84               [ 1]  361 	pop	a
+      0001EB 16 03            [ 2]  362 	ldw	y, (0x03, sp)
+      0001ED 72 F2 1A         [ 2]  363 	subw	y, (0x1a, sp)
+      0001F0 12 19            [ 1]  364 	sbc	a, (0x19, sp)
+      0001F2 97               [ 1]  365 	ld	xl, a
+      0001F3 7B 01            [ 1]  366 	ld	a, (0x01, sp)
+      0001F5 12 18            [ 1]  367 	sbc	a, (0x18, sp)
+      0001F7 95               [ 1]  368 	ld	xh, a
+      0001F8 A6 04            [ 1]  369 	ld	a, #0x04
+      0001FA                        370 00341$:
+      0001FA 90 58            [ 2]  371 	sllw	y
+      0001FC 59               [ 2]  372 	rlcw	x
+      0001FD 4A               [ 1]  373 	dec	a
+      0001FE 26 FA            [ 1]  374 	jrne	00341$
+      000200 4B 64            [ 1]  375 	push	#0x64
+      000202 4B 00            [ 1]  376 	push	#0x00
+      000204 4B 00            [ 1]  377 	push	#0x00
+      000206 4B 00            [ 1]  378 	push	#0x00
+      000208 90 89            [ 2]  379 	pushw	y
+      00020A 89               [ 2]  380 	pushw	x
+      00020B CDr00r00         [ 4]  381 	call	__divulong
+      00020E 5B 08            [ 2]  382 	addw	sp, #8
+      000210 9F               [ 1]  383 	ld	a, xl
+      000211 A4 0F            [ 1]  384 	and	a, #0x0f
+      000213 1A 1C            [ 1]  385 	or	a, (0x1c, sp)
+      000215 AE 52 33         [ 2]  386 	ldw	x, #0x5233
+      000218 F7               [ 1]  387 	ld	(x), a
+                                    388 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 133: UART1->BRR2 |= (uint8_t)((BaudRate_Mantissa >> 4) & (uint8_t)0xF0); 
+      000219 AE 52 33         [ 2]  389 	ldw	x, #0x5233
+      00021C F6               [ 1]  390 	ld	a, (x)
+      00021D 6B 17            [ 1]  391 	ld	(0x17, sp), a
+      00021F 1E 07            [ 2]  392 	ldw	x, (0x07, sp)
+      000221 16 05            [ 2]  393 	ldw	y, (0x05, sp)
+      000223 90 54            [ 2]  394 	srlw	y
+      000225 56               [ 2]  395 	rrcw	x
+      000226 90 54            [ 2]  396 	srlw	y
+      000228 56               [ 2]  397 	rrcw	x
+      000229 90 54            [ 2]  398 	srlw	y
+      00022B 56               [ 2]  399 	rrcw	x
+      00022C 90 54            [ 2]  400 	srlw	y
+      00022E 56               [ 2]  401 	rrcw	x
+      00022F 9F               [ 1]  402 	ld	a, xl
+      000230 A4 F0            [ 1]  403 	and	a, #0xf0
+      000232 88               [ 1]  404 	push	a
+      000233 0F 16            [ 1]  405 	clr	(0x16, sp)
+      000235 5F               [ 1]  406 	clrw	x
+      000236 84               [ 1]  407 	pop	a
+      000237 1A 17            [ 1]  408 	or	a, (0x17, sp)
+      000239 AE 52 33         [ 2]  409 	ldw	x, #0x5233
+      00023C F7               [ 1]  410 	ld	(x), a
+                                    411 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 135: UART1->BRR1 |= (uint8_t)BaudRate_Mantissa;           
+      00023D AE 52 32         [ 2]  412 	ldw	x, #0x5232
+      000240 F6               [ 1]  413 	ld	a, (x)
+      000241 6B 0E            [ 1]  414 	ld	(0x0e, sp), a
+      000243 7B 08            [ 1]  415 	ld	a, (0x08, sp)
+      000245 1A 0E            [ 1]  416 	or	a, (0x0e, sp)
+      000247 AE 52 32         [ 2]  417 	ldw	x, #0x5232
+      00024A F7               [ 1]  418 	ld	(x), a
+                                    419 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 138: UART1->CR2 &= (uint8_t)~(UART1_CR2_TEN | UART1_CR2_REN); 
+      00024B AE 52 35         [ 2]  420 	ldw	x, #0x5235
+      00024E F6               [ 1]  421 	ld	a, (x)
+      00024F A4 F3            [ 1]  422 	and	a, #0xf3
+      000251 F7               [ 1]  423 	ld	(x), a
+                                    424 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 140: UART1->CR3 &= (uint8_t)~(UART1_CR3_CPOL | UART1_CR3_CPHA | UART1_CR3_LBCL); 
+      000252 AE 52 36         [ 2]  425 	ldw	x, #0x5236
+      000255 F6               [ 1]  426 	ld	a, (x)
+      000256 A4 F8            [ 1]  427 	and	a, #0xf8
+      000258 F7               [ 1]  428 	ld	(x), a
+                                    429 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 142: UART1->CR3 |= (uint8_t)((uint8_t)SyncMode & (uint8_t)(UART1_CR3_CPOL | 
+      000259 AE 52 36         [ 2]  430 	ldw	x, #0x5236
+      00025C F6               [ 1]  431 	ld	a, (x)
+      00025D 6B 21            [ 1]  432 	ld	(0x21, sp), a
+      00025F 7B 2B            [ 1]  433 	ld	a, (0x2b, sp)
+      000261 A4 07            [ 1]  434 	and	a, #0x07
+      000263 1A 21            [ 1]  435 	or	a, (0x21, sp)
+      000265 AE 52 36         [ 2]  436 	ldw	x, #0x5236
+      000268 F7               [ 1]  437 	ld	(x), a
+                                    438 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 145: if ((uint8_t)(Mode & UART1_MODE_TX_ENABLE))
+      000269 7B 2C            [ 1]  439 	ld	a, (0x2c, sp)
+      00026B A5 04            [ 1]  440 	bcp	a, #0x04
+      00026D 27 09            [ 1]  441 	jreq	00102$
+                                    442 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 148: UART1->CR2 |= (uint8_t)UART1_CR2_TEN;  
+      00026F AE 52 35         [ 2]  443 	ldw	x, #0x5235
+      000272 F6               [ 1]  444 	ld	a, (x)
+      000273 AA 08            [ 1]  445 	or	a, #0x08
+      000275 F7               [ 1]  446 	ld	(x), a
+      000276 20 07            [ 2]  447 	jra	00103$
+      000278                        448 00102$:
+                                    449 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 153: UART1->CR2 &= (uint8_t)(~UART1_CR2_TEN);  
+      000278 AE 52 35         [ 2]  450 	ldw	x, #0x5235
+      00027B F6               [ 1]  451 	ld	a, (x)
+      00027C A4 F7            [ 1]  452 	and	a, #0xf7
+      00027E F7               [ 1]  453 	ld	(x), a
+      00027F                        454 00103$:
+                                    455 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 155: if ((uint8_t)(Mode & UART1_MODE_RX_ENABLE))
+      00027F 7B 2C            [ 1]  456 	ld	a, (0x2c, sp)
+      000281 A5 08            [ 1]  457 	bcp	a, #0x08
+      000283 27 09            [ 1]  458 	jreq	00105$
+                                    459 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 158: UART1->CR2 |= (uint8_t)UART1_CR2_REN;  
+      000285 AE 52 35         [ 2]  460 	ldw	x, #0x5235
+      000288 F6               [ 1]  461 	ld	a, (x)
+      000289 AA 04            [ 1]  462 	or	a, #0x04
+      00028B F7               [ 1]  463 	ld	(x), a
+      00028C 20 07            [ 2]  464 	jra	00106$
+      00028E                        465 00105$:
+                                    466 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 163: UART1->CR2 &= (uint8_t)(~UART1_CR2_REN);  
+      00028E AE 52 35         [ 2]  467 	ldw	x, #0x5235
+      000291 F6               [ 1]  468 	ld	a, (x)
+      000292 A4 FB            [ 1]  469 	and	a, #0xfb
+      000294 F7               [ 1]  470 	ld	(x), a
+      000295                        471 00106$:
+                                    472 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 167: if ((uint8_t)(SyncMode & UART1_SYNCMODE_CLOCK_DISABLE))
+      000295 0D 2B            [ 1]  473 	tnz	(0x2b, sp)
+      000297 2A 09            [ 1]  474 	jrpl	00108$
+                                    475 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 170: UART1->CR3 &= (uint8_t)(~UART1_CR3_CKEN); 
+      000299 AE 52 36         [ 2]  476 	ldw	x, #0x5236
+      00029C F6               [ 1]  477 	ld	a, (x)
+      00029D A4 F7            [ 1]  478 	and	a, #0xf7
+      00029F F7               [ 1]  479 	ld	(x), a
+      0002A0 20 10            [ 2]  480 	jra	00110$
+      0002A2                        481 00108$:
+                                    482 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 174: UART1->CR3 |= (uint8_t)((uint8_t)SyncMode & UART1_CR3_CKEN);
+      0002A2 AE 52 36         [ 2]  483 	ldw	x, #0x5236
+      0002A5 F6               [ 1]  484 	ld	a, (x)
+      0002A6 6B 09            [ 1]  485 	ld	(0x09, sp), a
+      0002A8 7B 2B            [ 1]  486 	ld	a, (0x2b, sp)
+      0002AA A4 08            [ 1]  487 	and	a, #0x08
+      0002AC 1A 09            [ 1]  488 	or	a, (0x09, sp)
+      0002AE AE 52 36         [ 2]  489 	ldw	x, #0x5236
+      0002B1 F7               [ 1]  490 	ld	(x), a
+      0002B2                        491 00110$:
+      0002B2 5B 21            [ 2]  492 	addw	sp, #33
+      0002B4 81               [ 4]  493 	ret
+                                    494 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 184: void UART1_Cmd(FunctionalState NewState)
+                                    495 ;	-----------------------------------------
+                                    496 ;	 function UART1_Cmd
+                                    497 ;	-----------------------------------------
+      0002B5                        498 _UART1_Cmd:
+                                    499 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 186: if (NewState != DISABLE)
+      0002B5 0D 03            [ 1]  500 	tnz	(0x03, sp)
+      0002B7 27 09            [ 1]  501 	jreq	00102$
+                                    502 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 189: UART1->CR1 &= (uint8_t)(~UART1_CR1_UARTD); 
+      0002B9 AE 52 34         [ 2]  503 	ldw	x, #0x5234
+      0002BC F6               [ 1]  504 	ld	a, (x)
+      0002BD A4 DF            [ 1]  505 	and	a, #0xdf
+      0002BF F7               [ 1]  506 	ld	(x), a
+      0002C0 20 07            [ 2]  507 	jra	00104$
+      0002C2                        508 00102$:
+                                    509 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 194: UART1->CR1 |= UART1_CR1_UARTD;  
+      0002C2 AE 52 34         [ 2]  510 	ldw	x, #0x5234
+      0002C5 F6               [ 1]  511 	ld	a, (x)
+      0002C6 AA 20            [ 1]  512 	or	a, #0x20
+      0002C8 F7               [ 1]  513 	ld	(x), a
+      0002C9                        514 00104$:
+      0002C9 81               [ 4]  515 	ret
+                                    516 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 211: void UART1_ITConfig(UART1_IT_TypeDef UART1_IT, FunctionalState NewState)
+                                    517 ;	-----------------------------------------
+                                    518 ;	 function UART1_ITConfig
+                                    519 ;	-----------------------------------------
+      0002CA                        520 _UART1_ITConfig:
+      0002CA 52 03            [ 2]  521 	sub	sp, #3
+                                    522 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 216: assert_param(IS_UART1_CONFIG_IT_OK(UART1_IT));
+      0002CC 1E 06            [ 2]  523 	ldw	x, (0x06, sp)
+      0002CE A3 01 00         [ 2]  524 	cpw	x, #0x0100
+      0002D1 27 34            [ 1]  525 	jreq	00119$
+      0002D3 1E 06            [ 2]  526 	ldw	x, (0x06, sp)
+      0002D5 A3 02 77         [ 2]  527 	cpw	x, #0x0277
+      0002D8 27 2D            [ 1]  528 	jreq	00119$
+      0002DA 1E 06            [ 2]  529 	ldw	x, (0x06, sp)
+      0002DC A3 02 66         [ 2]  530 	cpw	x, #0x0266
+      0002DF 27 26            [ 1]  531 	jreq	00119$
+      0002E1 1E 06            [ 2]  532 	ldw	x, (0x06, sp)
+      0002E3 A3 02 05         [ 2]  533 	cpw	x, #0x0205
+      0002E6 27 1F            [ 1]  534 	jreq	00119$
+      0002E8 1E 06            [ 2]  535 	ldw	x, (0x06, sp)
+      0002EA A3 02 44         [ 2]  536 	cpw	x, #0x0244
+      0002ED 27 18            [ 1]  537 	jreq	00119$
+      0002EF 1E 06            [ 2]  538 	ldw	x, (0x06, sp)
+      0002F1 A3 03 46         [ 2]  539 	cpw	x, #0x0346
+      0002F4 27 11            [ 1]  540 	jreq	00119$
+      0002F6 90 AEr07rF3      [ 2]  541 	ldw	y, #___str_0+0
+      0002FA 4B D8            [ 1]  542 	push	#0xd8
+      0002FC 5F               [ 1]  543 	clrw	x
+      0002FD 89               [ 2]  544 	pushw	x
+      0002FE 4B 00            [ 1]  545 	push	#0x00
+      000300 90 89            [ 2]  546 	pushw	y
+      000302 CDr00r00         [ 4]  547 	call	_assert_failed
+      000305 5B 06            [ 2]  548 	addw	sp, #6
+      000307                        549 00119$:
+                                    550 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 217: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      000307 0D 08            [ 1]  551 	tnz	(0x08, sp)
+      000309 27 17            [ 1]  552 	jreq	00136$
+      00030B 7B 08            [ 1]  553 	ld	a, (0x08, sp)
+      00030D A1 01            [ 1]  554 	cp	a, #0x01
+      00030F 27 11            [ 1]  555 	jreq	00136$
+      000311 90 AEr07rF3      [ 2]  556 	ldw	y, #___str_0+0
+      000315 4B D9            [ 1]  557 	push	#0xd9
+      000317 5F               [ 1]  558 	clrw	x
+      000318 89               [ 2]  559 	pushw	x
+      000319 4B 00            [ 1]  560 	push	#0x00
+      00031B 90 89            [ 2]  561 	pushw	y
+      00031D CDr00r00         [ 4]  562 	call	_assert_failed
+      000320 5B 06            [ 2]  563 	addw	sp, #6
+      000322                        564 00136$:
+                                    565 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 220: uartreg = (uint8_t)((uint16_t)UART1_IT >> 0x08);
+      000322 7B 06            [ 1]  566 	ld	a, (0x06, sp)
+      000324 95               [ 1]  567 	ld	xh, a
+      000325 4F               [ 1]  568 	clr	a
+                                    569 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 222: itpos = (uint8_t)((uint8_t)1 << (uint8_t)((uint8_t)UART1_IT & (uint8_t)0x0F));
+      000326 7B 07            [ 1]  570 	ld	a, (0x07, sp)
+      000328 A4 0F            [ 1]  571 	and	a, #0x0f
+      00032A 97               [ 1]  572 	ld	xl, a
+      00032B A6 01            [ 1]  573 	ld	a, #0x01
+      00032D 88               [ 1]  574 	push	a
+      00032E 9F               [ 1]  575 	ld	a, xl
+      00032F 4D               [ 1]  576 	tnz	a
+      000330 27 05            [ 1]  577 	jreq	00215$
+      000332                        578 00214$:
+      000332 08 01            [ 1]  579 	sll	(1, sp)
+      000334 4A               [ 1]  580 	dec	a
+      000335 26 FB            [ 1]  581 	jrne	00214$
+      000337                        582 00215$:
+      000337 84               [ 1]  583 	pop	a
+      000338 6B 01            [ 1]  584 	ld	(0x01, sp), a
+                                    585 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 227: if (uartreg == 0x01)
+      00033A 9E               [ 1]  586 	ld	a, xh
+      00033B A1 01            [ 1]  587 	cp	a, #0x01
+      00033D 26 06            [ 1]  588 	jrne	00217$
+      00033F A6 01            [ 1]  589 	ld	a, #0x01
+      000341 6B 02            [ 1]  590 	ld	(0x02, sp), a
+      000343 20 02            [ 2]  591 	jra	00218$
+      000345                        592 00217$:
+      000345 0F 02            [ 1]  593 	clr	(0x02, sp)
+      000347                        594 00218$:
+                                    595 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 231: else if (uartreg == 0x02)
+      000347 9E               [ 1]  596 	ld	a, xh
+      000348 A1 02            [ 1]  597 	cp	a, #0x02
+      00034A 26 03            [ 1]  598 	jrne	00220$
+      00034C A6 01            [ 1]  599 	ld	a, #0x01
+      00034E 21                     600 	.byte 0x21
+      00034F                        601 00220$:
+      00034F 4F               [ 1]  602 	clr	a
+      000350                        603 00221$:
+                                    604 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 224: if (NewState != DISABLE)
+      000350 0D 08            [ 1]  605 	tnz	(0x08, sp)
+      000352 27 2B            [ 1]  606 	jreq	00114$
+                                    607 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 227: if (uartreg == 0x01)
+      000354 0D 02            [ 1]  608 	tnz	(0x02, sp)
+      000356 27 0C            [ 1]  609 	jreq	00105$
+                                    610 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 229: UART1->CR1 |= itpos;
+      000358 AE 52 34         [ 2]  611 	ldw	x, #0x5234
+      00035B F6               [ 1]  612 	ld	a, (x)
+      00035C 1A 01            [ 1]  613 	or	a, (0x01, sp)
+      00035E AE 52 34         [ 2]  614 	ldw	x, #0x5234
+      000361 F7               [ 1]  615 	ld	(x), a
+      000362 20 4B            [ 2]  616 	jra	00116$
+      000364                        617 00105$:
+                                    618 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 231: else if (uartreg == 0x02)
+      000364 4D               [ 1]  619 	tnz	a
+      000365 27 0C            [ 1]  620 	jreq	00102$
+                                    621 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 233: UART1->CR2 |= itpos;
+      000367 AE 52 35         [ 2]  622 	ldw	x, #0x5235
+      00036A F6               [ 1]  623 	ld	a, (x)
+      00036B 1A 01            [ 1]  624 	or	a, (0x01, sp)
+      00036D AE 52 35         [ 2]  625 	ldw	x, #0x5235
+      000370 F7               [ 1]  626 	ld	(x), a
+      000371 20 3C            [ 2]  627 	jra	00116$
+      000373                        628 00102$:
+                                    629 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 237: UART1->CR4 |= itpos;
+      000373 AE 52 37         [ 2]  630 	ldw	x, #0x5237
+      000376 F6               [ 1]  631 	ld	a, (x)
+      000377 1A 01            [ 1]  632 	or	a, (0x01, sp)
+      000379 AE 52 37         [ 2]  633 	ldw	x, #0x5237
+      00037C F7               [ 1]  634 	ld	(x), a
+      00037D 20 30            [ 2]  635 	jra	00116$
+      00037F                        636 00114$:
+                                    637 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 245: UART1->CR1 &= (uint8_t)(~itpos);
+      00037F 88               [ 1]  638 	push	a
+      000380 7B 02            [ 1]  639 	ld	a, (0x02, sp)
+      000382 43               [ 1]  640 	cpl	a
+      000383 6B 04            [ 1]  641 	ld	(0x04, sp), a
+      000385 84               [ 1]  642 	pop	a
+                                    643 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 243: if (uartreg == 0x01)
+      000386 0D 02            [ 1]  644 	tnz	(0x02, sp)
+      000388 27 0C            [ 1]  645 	jreq	00111$
+                                    646 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 245: UART1->CR1 &= (uint8_t)(~itpos);
+      00038A AE 52 34         [ 2]  647 	ldw	x, #0x5234
+      00038D F6               [ 1]  648 	ld	a, (x)
+      00038E 14 03            [ 1]  649 	and	a, (0x03, sp)
+      000390 AE 52 34         [ 2]  650 	ldw	x, #0x5234
+      000393 F7               [ 1]  651 	ld	(x), a
+      000394 20 19            [ 2]  652 	jra	00116$
+      000396                        653 00111$:
+                                    654 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 247: else if (uartreg == 0x02)
+      000396 4D               [ 1]  655 	tnz	a
+      000397 27 0C            [ 1]  656 	jreq	00108$
+                                    657 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 249: UART1->CR2 &= (uint8_t)(~itpos);
+      000399 AE 52 35         [ 2]  658 	ldw	x, #0x5235
+      00039C F6               [ 1]  659 	ld	a, (x)
+      00039D 14 03            [ 1]  660 	and	a, (0x03, sp)
+      00039F AE 52 35         [ 2]  661 	ldw	x, #0x5235
+      0003A2 F7               [ 1]  662 	ld	(x), a
+      0003A3 20 0A            [ 2]  663 	jra	00116$
+      0003A5                        664 00108$:
+                                    665 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 253: UART1->CR4 &= (uint8_t)(~itpos);
+      0003A5 AE 52 37         [ 2]  666 	ldw	x, #0x5237
+      0003A8 F6               [ 1]  667 	ld	a, (x)
+      0003A9 14 03            [ 1]  668 	and	a, (0x03, sp)
+      0003AB AE 52 37         [ 2]  669 	ldw	x, #0x5237
+      0003AE F7               [ 1]  670 	ld	(x), a
+      0003AF                        671 00116$:
+      0003AF 5B 03            [ 2]  672 	addw	sp, #3
+      0003B1 81               [ 4]  673 	ret
+                                    674 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 265: void UART1_HalfDuplexCmd(FunctionalState NewState)
+                                    675 ;	-----------------------------------------
+                                    676 ;	 function UART1_HalfDuplexCmd
+                                    677 ;	-----------------------------------------
+      0003B2                        678 _UART1_HalfDuplexCmd:
+                                    679 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 267: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      0003B2 0D 03            [ 1]  680 	tnz	(0x03, sp)
+      0003B4 27 17            [ 1]  681 	jreq	00107$
+      0003B6 7B 03            [ 1]  682 	ld	a, (0x03, sp)
+      0003B8 A1 01            [ 1]  683 	cp	a, #0x01
+      0003BA 27 11            [ 1]  684 	jreq	00107$
+      0003BC 90 AEr07rF3      [ 2]  685 	ldw	y, #___str_0+0
+      0003C0 4B 0B            [ 1]  686 	push	#0x0b
+      0003C2 4B 01            [ 1]  687 	push	#0x01
+      0003C4 5F               [ 1]  688 	clrw	x
+      0003C5 89               [ 2]  689 	pushw	x
+      0003C6 90 89            [ 2]  690 	pushw	y
+      0003C8 CDr00r00         [ 4]  691 	call	_assert_failed
+      0003CB 5B 06            [ 2]  692 	addw	sp, #6
+      0003CD                        693 00107$:
+                                    694 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 269: if (NewState != DISABLE)
+      0003CD 0D 03            [ 1]  695 	tnz	(0x03, sp)
+      0003CF 27 09            [ 1]  696 	jreq	00102$
+                                    697 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 271: UART1->CR5 |= UART1_CR5_HDSEL;  /**< UART1 Half Duplex Enable  */
+      0003D1 AE 52 38         [ 2]  698 	ldw	x, #0x5238
+      0003D4 F6               [ 1]  699 	ld	a, (x)
+      0003D5 AA 08            [ 1]  700 	or	a, #0x08
+      0003D7 F7               [ 1]  701 	ld	(x), a
+      0003D8 20 07            [ 2]  702 	jra	00104$
+      0003DA                        703 00102$:
+                                    704 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 275: UART1->CR5 &= (uint8_t)~UART1_CR5_HDSEL; /**< UART1 Half Duplex Disable */
+      0003DA AE 52 38         [ 2]  705 	ldw	x, #0x5238
+      0003DD F6               [ 1]  706 	ld	a, (x)
+      0003DE A4 F7            [ 1]  707 	and	a, #0xf7
+      0003E0 F7               [ 1]  708 	ld	(x), a
+      0003E1                        709 00104$:
+      0003E1 81               [ 4]  710 	ret
+                                    711 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 285: void UART1_IrDAConfig(UART1_IrDAMode_TypeDef UART1_IrDAMode)
+                                    712 ;	-----------------------------------------
+                                    713 ;	 function UART1_IrDAConfig
+                                    714 ;	-----------------------------------------
+      0003E2                        715 _UART1_IrDAConfig:
+                                    716 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 287: assert_param(IS_UART1_IRDAMODE_OK(UART1_IrDAMode));
+      0003E2 7B 03            [ 1]  717 	ld	a, (0x03, sp)
+      0003E4 A1 01            [ 1]  718 	cp	a, #0x01
+      0003E6 27 15            [ 1]  719 	jreq	00107$
+      0003E8 0D 03            [ 1]  720 	tnz	(0x03, sp)
+      0003EA 27 11            [ 1]  721 	jreq	00107$
+      0003EC 90 AEr07rF3      [ 2]  722 	ldw	y, #___str_0+0
+      0003F0 4B 1F            [ 1]  723 	push	#0x1f
+      0003F2 4B 01            [ 1]  724 	push	#0x01
+      0003F4 5F               [ 1]  725 	clrw	x
+      0003F5 89               [ 2]  726 	pushw	x
+      0003F6 90 89            [ 2]  727 	pushw	y
+      0003F8 CDr00r00         [ 4]  728 	call	_assert_failed
+      0003FB 5B 06            [ 2]  729 	addw	sp, #6
+      0003FD                        730 00107$:
+                                    731 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 289: if (UART1_IrDAMode != UART1_IRDAMODE_NORMAL)
+      0003FD 0D 03            [ 1]  732 	tnz	(0x03, sp)
+      0003FF 27 09            [ 1]  733 	jreq	00102$
+                                    734 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 291: UART1->CR5 |= UART1_CR5_IRLP;
+      000401 AE 52 38         [ 2]  735 	ldw	x, #0x5238
+      000404 F6               [ 1]  736 	ld	a, (x)
+      000405 AA 04            [ 1]  737 	or	a, #0x04
+      000407 F7               [ 1]  738 	ld	(x), a
+      000408 20 07            [ 2]  739 	jra	00104$
+      00040A                        740 00102$:
+                                    741 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 295: UART1->CR5 &= ((uint8_t)~UART1_CR5_IRLP);
+      00040A AE 52 38         [ 2]  742 	ldw	x, #0x5238
+      00040D F6               [ 1]  743 	ld	a, (x)
+      00040E A4 FB            [ 1]  744 	and	a, #0xfb
+      000410 F7               [ 1]  745 	ld	(x), a
+      000411                        746 00104$:
+      000411 81               [ 4]  747 	ret
+                                    748 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 305: void UART1_IrDACmd(FunctionalState NewState)
+                                    749 ;	-----------------------------------------
+                                    750 ;	 function UART1_IrDACmd
+                                    751 ;	-----------------------------------------
+      000412                        752 _UART1_IrDACmd:
+                                    753 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 308: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      000412 0D 03            [ 1]  754 	tnz	(0x03, sp)
+      000414 27 17            [ 1]  755 	jreq	00107$
+      000416 7B 03            [ 1]  756 	ld	a, (0x03, sp)
+      000418 A1 01            [ 1]  757 	cp	a, #0x01
+      00041A 27 11            [ 1]  758 	jreq	00107$
+      00041C 90 AEr07rF3      [ 2]  759 	ldw	y, #___str_0+0
+      000420 4B 34            [ 1]  760 	push	#0x34
+      000422 4B 01            [ 1]  761 	push	#0x01
+      000424 5F               [ 1]  762 	clrw	x
+      000425 89               [ 2]  763 	pushw	x
+      000426 90 89            [ 2]  764 	pushw	y
+      000428 CDr00r00         [ 4]  765 	call	_assert_failed
+      00042B 5B 06            [ 2]  766 	addw	sp, #6
+      00042D                        767 00107$:
+                                    768 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 310: if (NewState != DISABLE)
+      00042D 0D 03            [ 1]  769 	tnz	(0x03, sp)
+      00042F 27 09            [ 1]  770 	jreq	00102$
+                                    771 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 313: UART1->CR5 |= UART1_CR5_IREN;
+      000431 AE 52 38         [ 2]  772 	ldw	x, #0x5238
+      000434 F6               [ 1]  773 	ld	a, (x)
+      000435 AA 02            [ 1]  774 	or	a, #0x02
+      000437 F7               [ 1]  775 	ld	(x), a
+      000438 20 07            [ 2]  776 	jra	00104$
+      00043A                        777 00102$:
+                                    778 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 318: UART1->CR5 &= ((uint8_t)~UART1_CR5_IREN);
+      00043A AE 52 38         [ 2]  779 	ldw	x, #0x5238
+      00043D F6               [ 1]  780 	ld	a, (x)
+      00043E A4 FD            [ 1]  781 	and	a, #0xfd
+      000440 F7               [ 1]  782 	ld	(x), a
+      000441                        783 00104$:
+      000441 81               [ 4]  784 	ret
+                                    785 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 329: void UART1_LINBreakDetectionConfig(UART1_LINBreakDetectionLength_TypeDef UART1_LINBreakDetectionLength)
+                                    786 ;	-----------------------------------------
+                                    787 ;	 function UART1_LINBreakDetectionConfig
+                                    788 ;	-----------------------------------------
+      000442                        789 _UART1_LINBreakDetectionConfig:
+                                    790 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 331: assert_param(IS_UART1_LINBREAKDETECTIONLENGTH_OK(UART1_LINBreakDetectionLength));
+      000442 0D 03            [ 1]  791 	tnz	(0x03, sp)
+      000444 27 17            [ 1]  792 	jreq	00107$
+      000446 7B 03            [ 1]  793 	ld	a, (0x03, sp)
+      000448 A1 01            [ 1]  794 	cp	a, #0x01
+      00044A 27 11            [ 1]  795 	jreq	00107$
+      00044C 90 AEr07rF3      [ 2]  796 	ldw	y, #___str_0+0
+      000450 4B 4B            [ 1]  797 	push	#0x4b
+      000452 4B 01            [ 1]  798 	push	#0x01
+      000454 5F               [ 1]  799 	clrw	x
+      000455 89               [ 2]  800 	pushw	x
+      000456 90 89            [ 2]  801 	pushw	y
+      000458 CDr00r00         [ 4]  802 	call	_assert_failed
+      00045B 5B 06            [ 2]  803 	addw	sp, #6
+      00045D                        804 00107$:
+                                    805 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 333: if (UART1_LINBreakDetectionLength != UART1_LINBREAKDETECTIONLENGTH_10BITS)
+      00045D 0D 03            [ 1]  806 	tnz	(0x03, sp)
+      00045F 27 09            [ 1]  807 	jreq	00102$
+                                    808 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 335: UART1->CR4 |= UART1_CR4_LBDL;
+      000461 AE 52 37         [ 2]  809 	ldw	x, #0x5237
+      000464 F6               [ 1]  810 	ld	a, (x)
+      000465 AA 20            [ 1]  811 	or	a, #0x20
+      000467 F7               [ 1]  812 	ld	(x), a
+      000468 20 07            [ 2]  813 	jra	00104$
+      00046A                        814 00102$:
+                                    815 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 339: UART1->CR4 &= ((uint8_t)~UART1_CR4_LBDL);
+      00046A AE 52 37         [ 2]  816 	ldw	x, #0x5237
+      00046D F6               [ 1]  817 	ld	a, (x)
+      00046E A4 DF            [ 1]  818 	and	a, #0xdf
+      000470 F7               [ 1]  819 	ld	(x), a
+      000471                        820 00104$:
+      000471 81               [ 4]  821 	ret
+                                    822 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 349: void UART1_LINCmd(FunctionalState NewState)
+                                    823 ;	-----------------------------------------
+                                    824 ;	 function UART1_LINCmd
+                                    825 ;	-----------------------------------------
+      000472                        826 _UART1_LINCmd:
+                                    827 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 351: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      000472 0D 03            [ 1]  828 	tnz	(0x03, sp)
+      000474 27 17            [ 1]  829 	jreq	00107$
+      000476 7B 03            [ 1]  830 	ld	a, (0x03, sp)
+      000478 A1 01            [ 1]  831 	cp	a, #0x01
+      00047A 27 11            [ 1]  832 	jreq	00107$
+      00047C 90 AEr07rF3      [ 2]  833 	ldw	y, #___str_0+0
+      000480 4B 5F            [ 1]  834 	push	#0x5f
+      000482 4B 01            [ 1]  835 	push	#0x01
+      000484 5F               [ 1]  836 	clrw	x
+      000485 89               [ 2]  837 	pushw	x
+      000486 90 89            [ 2]  838 	pushw	y
+      000488 CDr00r00         [ 4]  839 	call	_assert_failed
+      00048B 5B 06            [ 2]  840 	addw	sp, #6
+      00048D                        841 00107$:
+                                    842 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 353: if (NewState != DISABLE)
+      00048D 0D 03            [ 1]  843 	tnz	(0x03, sp)
+      00048F 27 09            [ 1]  844 	jreq	00102$
+                                    845 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 356: UART1->CR3 |= UART1_CR3_LINEN;
+      000491 AE 52 36         [ 2]  846 	ldw	x, #0x5236
+      000494 F6               [ 1]  847 	ld	a, (x)
+      000495 AA 40            [ 1]  848 	or	a, #0x40
+      000497 F7               [ 1]  849 	ld	(x), a
+      000498 20 07            [ 2]  850 	jra	00104$
+      00049A                        851 00102$:
+                                    852 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 361: UART1->CR3 &= ((uint8_t)~UART1_CR3_LINEN);
+      00049A AE 52 36         [ 2]  853 	ldw	x, #0x5236
+      00049D F6               [ 1]  854 	ld	a, (x)
+      00049E A4 BF            [ 1]  855 	and	a, #0xbf
+      0004A0 F7               [ 1]  856 	ld	(x), a
+      0004A1                        857 00104$:
+      0004A1 81               [ 4]  858 	ret
+                                    859 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 371: void UART1_SmartCardCmd(FunctionalState NewState)
+                                    860 ;	-----------------------------------------
+                                    861 ;	 function UART1_SmartCardCmd
+                                    862 ;	-----------------------------------------
+      0004A2                        863 _UART1_SmartCardCmd:
+                                    864 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 373: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      0004A2 0D 03            [ 1]  865 	tnz	(0x03, sp)
+      0004A4 27 17            [ 1]  866 	jreq	00107$
+      0004A6 7B 03            [ 1]  867 	ld	a, (0x03, sp)
+      0004A8 A1 01            [ 1]  868 	cp	a, #0x01
+      0004AA 27 11            [ 1]  869 	jreq	00107$
+      0004AC 90 AEr07rF3      [ 2]  870 	ldw	y, #___str_0+0
+      0004B0 4B 75            [ 1]  871 	push	#0x75
+      0004B2 4B 01            [ 1]  872 	push	#0x01
+      0004B4 5F               [ 1]  873 	clrw	x
+      0004B5 89               [ 2]  874 	pushw	x
+      0004B6 90 89            [ 2]  875 	pushw	y
+      0004B8 CDr00r00         [ 4]  876 	call	_assert_failed
+      0004BB 5B 06            [ 2]  877 	addw	sp, #6
+      0004BD                        878 00107$:
+                                    879 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 375: if (NewState != DISABLE)
+      0004BD 0D 03            [ 1]  880 	tnz	(0x03, sp)
+      0004BF 27 09            [ 1]  881 	jreq	00102$
+                                    882 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 378: UART1->CR5 |= UART1_CR5_SCEN;
+      0004C1 AE 52 38         [ 2]  883 	ldw	x, #0x5238
+      0004C4 F6               [ 1]  884 	ld	a, (x)
+      0004C5 AA 20            [ 1]  885 	or	a, #0x20
+      0004C7 F7               [ 1]  886 	ld	(x), a
+      0004C8 20 07            [ 2]  887 	jra	00104$
+      0004CA                        888 00102$:
+                                    889 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 383: UART1->CR5 &= ((uint8_t)(~UART1_CR5_SCEN));
+      0004CA AE 52 38         [ 2]  890 	ldw	x, #0x5238
+      0004CD F6               [ 1]  891 	ld	a, (x)
+      0004CE A4 DF            [ 1]  892 	and	a, #0xdf
+      0004D0 F7               [ 1]  893 	ld	(x), a
+      0004D1                        894 00104$:
+      0004D1 81               [ 4]  895 	ret
+                                    896 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 394: void UART1_SmartCardNACKCmd(FunctionalState NewState)
+                                    897 ;	-----------------------------------------
+                                    898 ;	 function UART1_SmartCardNACKCmd
+                                    899 ;	-----------------------------------------
+      0004D2                        900 _UART1_SmartCardNACKCmd:
+                                    901 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 396: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      0004D2 0D 03            [ 1]  902 	tnz	(0x03, sp)
+      0004D4 27 17            [ 1]  903 	jreq	00107$
+      0004D6 7B 03            [ 1]  904 	ld	a, (0x03, sp)
+      0004D8 A1 01            [ 1]  905 	cp	a, #0x01
+      0004DA 27 11            [ 1]  906 	jreq	00107$
+      0004DC 90 AEr07rF3      [ 2]  907 	ldw	y, #___str_0+0
+      0004E0 4B 8C            [ 1]  908 	push	#0x8c
+      0004E2 4B 01            [ 1]  909 	push	#0x01
+      0004E4 5F               [ 1]  910 	clrw	x
+      0004E5 89               [ 2]  911 	pushw	x
+      0004E6 90 89            [ 2]  912 	pushw	y
+      0004E8 CDr00r00         [ 4]  913 	call	_assert_failed
+      0004EB 5B 06            [ 2]  914 	addw	sp, #6
+      0004ED                        915 00107$:
+                                    916 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 398: if (NewState != DISABLE)
+      0004ED 0D 03            [ 1]  917 	tnz	(0x03, sp)
+      0004EF 27 09            [ 1]  918 	jreq	00102$
+                                    919 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 401: UART1->CR5 |= UART1_CR5_NACK;
+      0004F1 AE 52 38         [ 2]  920 	ldw	x, #0x5238
+      0004F4 F6               [ 1]  921 	ld	a, (x)
+      0004F5 AA 10            [ 1]  922 	or	a, #0x10
+      0004F7 F7               [ 1]  923 	ld	(x), a
+      0004F8 20 07            [ 2]  924 	jra	00104$
+      0004FA                        925 00102$:
+                                    926 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 406: UART1->CR5 &= ((uint8_t)~(UART1_CR5_NACK));
+      0004FA AE 52 38         [ 2]  927 	ldw	x, #0x5238
+      0004FD F6               [ 1]  928 	ld	a, (x)
+      0004FE A4 EF            [ 1]  929 	and	a, #0xef
+      000500 F7               [ 1]  930 	ld	(x), a
+      000501                        931 00104$:
+      000501 81               [ 4]  932 	ret
+                                    933 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 416: void UART1_WakeUpConfig(UART1_WakeUp_TypeDef UART1_WakeUp)
+                                    934 ;	-----------------------------------------
+                                    935 ;	 function UART1_WakeUpConfig
+                                    936 ;	-----------------------------------------
+      000502                        937 _UART1_WakeUpConfig:
+                                    938 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 418: assert_param(IS_UART1_WAKEUP_OK(UART1_WakeUp));
+      000502 0D 03            [ 1]  939 	tnz	(0x03, sp)
+      000504 27 17            [ 1]  940 	jreq	00104$
+      000506 7B 03            [ 1]  941 	ld	a, (0x03, sp)
+      000508 A1 08            [ 1]  942 	cp	a, #0x08
+      00050A 27 11            [ 1]  943 	jreq	00104$
+      00050C 90 AEr07rF3      [ 2]  944 	ldw	y, #___str_0+0
+      000510 4B A2            [ 1]  945 	push	#0xa2
+      000512 4B 01            [ 1]  946 	push	#0x01
+      000514 5F               [ 1]  947 	clrw	x
+      000515 89               [ 2]  948 	pushw	x
+      000516 90 89            [ 2]  949 	pushw	y
+      000518 CDr00r00         [ 4]  950 	call	_assert_failed
+      00051B 5B 06            [ 2]  951 	addw	sp, #6
+      00051D                        952 00104$:
+                                    953 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 420: UART1->CR1 &= ((uint8_t)~UART1_CR1_WAKE);
+      00051D AE 52 34         [ 2]  954 	ldw	x, #0x5234
+      000520 F6               [ 1]  955 	ld	a, (x)
+      000521 A4 F7            [ 1]  956 	and	a, #0xf7
+      000523 F7               [ 1]  957 	ld	(x), a
+                                    958 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 421: UART1->CR1 |= (uint8_t)UART1_WakeUp;
+      000524 AE 52 34         [ 2]  959 	ldw	x, #0x5234
+      000527 F6               [ 1]  960 	ld	a, (x)
+      000528 1A 03            [ 1]  961 	or	a, (0x03, sp)
+      00052A AE 52 34         [ 2]  962 	ldw	x, #0x5234
+      00052D F7               [ 1]  963 	ld	(x), a
+      00052E 81               [ 4]  964 	ret
+                                    965 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 430: void UART1_ReceiverWakeUpCmd(FunctionalState NewState)
+                                    966 ;	-----------------------------------------
+                                    967 ;	 function UART1_ReceiverWakeUpCmd
+                                    968 ;	-----------------------------------------
+      00052F                        969 _UART1_ReceiverWakeUpCmd:
+                                    970 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 432: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      00052F 0D 03            [ 1]  971 	tnz	(0x03, sp)
+      000531 27 17            [ 1]  972 	jreq	00107$
+      000533 7B 03            [ 1]  973 	ld	a, (0x03, sp)
+      000535 A1 01            [ 1]  974 	cp	a, #0x01
+      000537 27 11            [ 1]  975 	jreq	00107$
+      000539 90 AEr07rF3      [ 2]  976 	ldw	y, #___str_0+0
+      00053D 4B B0            [ 1]  977 	push	#0xb0
+      00053F 4B 01            [ 1]  978 	push	#0x01
+      000541 5F               [ 1]  979 	clrw	x
+      000542 89               [ 2]  980 	pushw	x
+      000543 90 89            [ 2]  981 	pushw	y
+      000545 CDr00r00         [ 4]  982 	call	_assert_failed
+      000548 5B 06            [ 2]  983 	addw	sp, #6
+      00054A                        984 00107$:
+                                    985 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 434: if (NewState != DISABLE)
+      00054A 0D 03            [ 1]  986 	tnz	(0x03, sp)
+      00054C 27 09            [ 1]  987 	jreq	00102$
+                                    988 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 437: UART1->CR2 |= UART1_CR2_RWU;
+      00054E AE 52 35         [ 2]  989 	ldw	x, #0x5235
+      000551 F6               [ 1]  990 	ld	a, (x)
+      000552 AA 02            [ 1]  991 	or	a, #0x02
+      000554 F7               [ 1]  992 	ld	(x), a
+      000555 20 07            [ 2]  993 	jra	00104$
+      000557                        994 00102$:
+                                    995 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 442: UART1->CR2 &= ((uint8_t)~UART1_CR2_RWU);
+      000557 AE 52 35         [ 2]  996 	ldw	x, #0x5235
+      00055A F6               [ 1]  997 	ld	a, (x)
+      00055B A4 FD            [ 1]  998 	and	a, #0xfd
+      00055D F7               [ 1]  999 	ld	(x), a
+      00055E                       1000 00104$:
+      00055E 81               [ 4] 1001 	ret
+                                   1002 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 451: uint8_t UART1_ReceiveData8(void)
+                                   1003 ;	-----------------------------------------
+                                   1004 ;	 function UART1_ReceiveData8
+                                   1005 ;	-----------------------------------------
+      00055F                       1006 _UART1_ReceiveData8:
+                                   1007 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 453: return ((uint8_t)UART1->DR);
+      00055F AE 52 31         [ 2] 1008 	ldw	x, #0x5231
+      000562 F6               [ 1] 1009 	ld	a, (x)
+      000563 81               [ 4] 1010 	ret
+                                   1011 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 461: uint16_t UART1_ReceiveData9(void)
+                                   1012 ;	-----------------------------------------
+                                   1013 ;	 function UART1_ReceiveData9
+                                   1014 ;	-----------------------------------------
+      000564                       1015 _UART1_ReceiveData9:
+      000564 52 04            [ 2] 1016 	sub	sp, #4
+                                   1017 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 465: temp = (uint16_t)(((uint16_t)( (uint16_t)UART1->CR1 & (uint16_t)UART1_CR1_R8)) << 1);
+      000566 AE 52 34         [ 2] 1018 	ldw	x, #0x5234
+      000569 F6               [ 1] 1019 	ld	a, (x)
+      00056A 0F 03            [ 1] 1020 	clr	(0x03, sp)
+      00056C A4 80            [ 1] 1021 	and	a, #0x80
+      00056E 97               [ 1] 1022 	ld	xl, a
+      00056F 4F               [ 1] 1023 	clr	a
+      000570 95               [ 1] 1024 	ld	xh, a
+      000571 58               [ 2] 1025 	sllw	x
+      000572 1F 01            [ 2] 1026 	ldw	(0x01, sp), x
+                                   1027 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 466: return (uint16_t)( (((uint16_t) UART1->DR) | temp ) & ((uint16_t)0x01FF));
+      000574 AE 52 31         [ 2] 1028 	ldw	x, #0x5231
+      000577 F6               [ 1] 1029 	ld	a, (x)
+      000578 5F               [ 1] 1030 	clrw	x
+      000579 97               [ 1] 1031 	ld	xl, a
+      00057A 1A 02            [ 1] 1032 	or	a, (0x02, sp)
+      00057C 02               [ 1] 1033 	rlwa	x
+      00057D 1A 01            [ 1] 1034 	or	a, (0x01, sp)
+      00057F A4 01            [ 1] 1035 	and	a, #0x01
+      000581 95               [ 1] 1036 	ld	xh, a
+      000582 5B 04            [ 2] 1037 	addw	sp, #4
+      000584 81               [ 4] 1038 	ret
+                                   1039 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 474: void UART1_SendData8(uint8_t Data)
+                                   1040 ;	-----------------------------------------
+                                   1041 ;	 function UART1_SendData8
+                                   1042 ;	-----------------------------------------
+      000585                       1043 _UART1_SendData8:
+                                   1044 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 477: UART1->DR = Data;
+      000585 AE 52 31         [ 2] 1045 	ldw	x, #0x5231
+      000588 7B 03            [ 1] 1046 	ld	a, (0x03, sp)
+      00058A F7               [ 1] 1047 	ld	(x), a
+      00058B 81               [ 4] 1048 	ret
+                                   1049 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 486: void UART1_SendData9(uint16_t Data)
+                                   1050 ;	-----------------------------------------
+                                   1051 ;	 function UART1_SendData9
+                                   1052 ;	-----------------------------------------
+      00058C                       1053 _UART1_SendData9:
+      00058C 88               [ 1] 1054 	push	a
+                                   1055 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 489: UART1->CR1 &= ((uint8_t)~UART1_CR1_T8);
+      00058D AE 52 34         [ 2] 1056 	ldw	x, #0x5234
+      000590 F6               [ 1] 1057 	ld	a, (x)
+      000591 A4 BF            [ 1] 1058 	and	a, #0xbf
+      000593 F7               [ 1] 1059 	ld	(x), a
+                                   1060 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 491: UART1->CR1 |= (uint8_t)(((uint8_t)(Data >> 2)) & UART1_CR1_T8);
+      000594 AE 52 34         [ 2] 1061 	ldw	x, #0x5234
+      000597 F6               [ 1] 1062 	ld	a, (x)
+      000598 6B 01            [ 1] 1063 	ld	(0x01, sp), a
+      00059A 1E 04            [ 2] 1064 	ldw	x, (0x04, sp)
+      00059C 54               [ 2] 1065 	srlw	x
+      00059D 54               [ 2] 1066 	srlw	x
+      00059E 9F               [ 1] 1067 	ld	a, xl
+      00059F A4 40            [ 1] 1068 	and	a, #0x40
+      0005A1 1A 01            [ 1] 1069 	or	a, (0x01, sp)
+      0005A3 AE 52 34         [ 2] 1070 	ldw	x, #0x5234
+      0005A6 F7               [ 1] 1071 	ld	(x), a
+                                   1072 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 493: UART1->DR   = (uint8_t)(Data);
+      0005A7 7B 05            [ 1] 1073 	ld	a, (0x05, sp)
+      0005A9 AE 52 31         [ 2] 1074 	ldw	x, #0x5231
+      0005AC F7               [ 1] 1075 	ld	(x), a
+      0005AD 84               [ 1] 1076 	pop	a
+      0005AE 81               [ 4] 1077 	ret
+                                   1078 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 501: void UART1_SendBreak(void)
+                                   1079 ;	-----------------------------------------
+                                   1080 ;	 function UART1_SendBreak
+                                   1081 ;	-----------------------------------------
+      0005AF                       1082 _UART1_SendBreak:
+                                   1083 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 503: UART1->CR2 |= UART1_CR2_SBK;
+      0005AF 72 10 52 35      [ 1] 1084 	bset	0x5235, #0
+      0005B3 81               [ 4] 1085 	ret
+                                   1086 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 511: void UART1_SetAddress(uint8_t UART1_Address)
+                                   1087 ;	-----------------------------------------
+                                   1088 ;	 function UART1_SetAddress
+                                   1089 ;	-----------------------------------------
+      0005B4                       1090 _UART1_SetAddress:
+                                   1091 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 514: assert_param(IS_UART1_ADDRESS_OK(UART1_Address));
+      0005B4 7B 03            [ 1] 1092 	ld	a, (0x03, sp)
+      0005B6 A1 10            [ 1] 1093 	cp	a, #0x10
+      0005B8 25 11            [ 1] 1094 	jrc	00104$
+      0005BA 90 AEr07rF3      [ 2] 1095 	ldw	y, #___str_0+0
+      0005BE 4B 02            [ 1] 1096 	push	#0x02
+      0005C0 4B 02            [ 1] 1097 	push	#0x02
+      0005C2 5F               [ 1] 1098 	clrw	x
+      0005C3 89               [ 2] 1099 	pushw	x
+      0005C4 90 89            [ 2] 1100 	pushw	y
+      0005C6 CDr00r00         [ 4] 1101 	call	_assert_failed
+      0005C9 5B 06            [ 2] 1102 	addw	sp, #6
+      0005CB                       1103 00104$:
+                                   1104 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 517: UART1->CR4 &= ((uint8_t)~UART1_CR4_ADD);
+      0005CB AE 52 37         [ 2] 1105 	ldw	x, #0x5237
+      0005CE F6               [ 1] 1106 	ld	a, (x)
+      0005CF A4 F0            [ 1] 1107 	and	a, #0xf0
+      0005D1 F7               [ 1] 1108 	ld	(x), a
+                                   1109 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 519: UART1->CR4 |= UART1_Address;
+      0005D2 AE 52 37         [ 2] 1110 	ldw	x, #0x5237
+      0005D5 F6               [ 1] 1111 	ld	a, (x)
+      0005D6 1A 03            [ 1] 1112 	or	a, (0x03, sp)
+      0005D8 AE 52 37         [ 2] 1113 	ldw	x, #0x5237
+      0005DB F7               [ 1] 1114 	ld	(x), a
+      0005DC 81               [ 4] 1115 	ret
+                                   1116 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 528: void UART1_SetGuardTime(uint8_t UART1_GuardTime)
+                                   1117 ;	-----------------------------------------
+                                   1118 ;	 function UART1_SetGuardTime
+                                   1119 ;	-----------------------------------------
+      0005DD                       1120 _UART1_SetGuardTime:
+                                   1121 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 531: UART1->GTR = UART1_GuardTime;
+      0005DD AE 52 39         [ 2] 1122 	ldw	x, #0x5239
+      0005E0 7B 03            [ 1] 1123 	ld	a, (0x03, sp)
+      0005E2 F7               [ 1] 1124 	ld	(x), a
+      0005E3 81               [ 4] 1125 	ret
+                                   1126 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 556: void UART1_SetPrescaler(uint8_t UART1_Prescaler)
+                                   1127 ;	-----------------------------------------
+                                   1128 ;	 function UART1_SetPrescaler
+                                   1129 ;	-----------------------------------------
+      0005E4                       1130 _UART1_SetPrescaler:
+                                   1131 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 559: UART1->PSCR = UART1_Prescaler;
+      0005E4 AE 52 3A         [ 2] 1132 	ldw	x, #0x523a
+      0005E7 7B 03            [ 1] 1133 	ld	a, (0x03, sp)
+      0005E9 F7               [ 1] 1134 	ld	(x), a
+      0005EA 81               [ 4] 1135 	ret
+                                   1136 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 568: FlagStatus UART1_GetFlagStatus(UART1_Flag_TypeDef UART1_FLAG)
+                                   1137 ;	-----------------------------------------
+                                   1138 ;	 function UART1_GetFlagStatus
+                                   1139 ;	-----------------------------------------
+      0005EB                       1140 _UART1_GetFlagStatus:
+      0005EB 89               [ 2] 1141 	pushw	x
+                                   1142 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 573: assert_param(IS_UART1_FLAG_OK(UART1_FLAG));
+      0005EC 1E 05            [ 2] 1143 	ldw	x, (0x05, sp)
+      0005EE A3 01 01         [ 2] 1144 	cpw	x, #0x0101
+      0005F1 26 06            [ 1] 1145 	jrne	00208$
+      0005F3 A6 01            [ 1] 1146 	ld	a, #0x01
+      0005F5 6B 01            [ 1] 1147 	ld	(0x01, sp), a
+      0005F7 20 02            [ 2] 1148 	jra	00209$
+      0005F9                       1149 00208$:
+      0005F9 0F 01            [ 1] 1150 	clr	(0x01, sp)
+      0005FB                       1151 00209$:
+      0005FB 1E 05            [ 2] 1152 	ldw	x, (0x05, sp)
+      0005FD A3 02 10         [ 2] 1153 	cpw	x, #0x0210
+      000600 26 03            [ 1] 1154 	jrne	00211$
+      000602 A6 01            [ 1] 1155 	ld	a, #0x01
+      000604 21                    1156 	.byte 0x21
+      000605                       1157 00211$:
+      000605 4F               [ 1] 1158 	clr	a
+      000606                       1159 00212$:
+      000606 1E 05            [ 2] 1160 	ldw	x, (0x05, sp)
+      000608 A3 00 80         [ 2] 1161 	cpw	x, #0x0080
+      00060B 27 4B            [ 1] 1162 	jreq	00119$
+      00060D 1E 05            [ 2] 1163 	ldw	x, (0x05, sp)
+      00060F A3 00 40         [ 2] 1164 	cpw	x, #0x0040
+      000612 27 44            [ 1] 1165 	jreq	00119$
+      000614 1E 05            [ 2] 1166 	ldw	x, (0x05, sp)
+      000616 A3 00 20         [ 2] 1167 	cpw	x, #0x0020
+      000619 27 3D            [ 1] 1168 	jreq	00119$
+      00061B 1E 05            [ 2] 1169 	ldw	x, (0x05, sp)
+      00061D A3 00 10         [ 2] 1170 	cpw	x, #0x0010
+      000620 27 36            [ 1] 1171 	jreq	00119$
+      000622 1E 05            [ 2] 1172 	ldw	x, (0x05, sp)
+      000624 A3 00 08         [ 2] 1173 	cpw	x, #0x0008
+      000627 27 2F            [ 1] 1174 	jreq	00119$
+      000629 1E 05            [ 2] 1175 	ldw	x, (0x05, sp)
+      00062B A3 00 04         [ 2] 1176 	cpw	x, #0x0004
+      00062E 27 28            [ 1] 1177 	jreq	00119$
+      000630 1E 05            [ 2] 1178 	ldw	x, (0x05, sp)
+      000632 A3 00 02         [ 2] 1179 	cpw	x, #0x0002
+      000635 27 21            [ 1] 1180 	jreq	00119$
+      000637 1E 05            [ 2] 1181 	ldw	x, (0x05, sp)
+      000639 A3 00 01         [ 2] 1182 	cpw	x, #0x0001
+      00063C 27 1A            [ 1] 1183 	jreq	00119$
+      00063E 0D 01            [ 1] 1184 	tnz	(0x01, sp)
+      000640 26 16            [ 1] 1185 	jrne	00119$
+      000642 4D               [ 1] 1186 	tnz	a
+      000643 26 13            [ 1] 1187 	jrne	00119$
+      000645 90 AEr07rF3      [ 2] 1188 	ldw	y, #___str_0+0
+      000649 88               [ 1] 1189 	push	a
+      00064A 4B 3D            [ 1] 1190 	push	#0x3d
+      00064C 4B 02            [ 1] 1191 	push	#0x02
+      00064E 5F               [ 1] 1192 	clrw	x
+      00064F 89               [ 2] 1193 	pushw	x
+      000650 90 89            [ 2] 1194 	pushw	y
+      000652 CDr00r00         [ 4] 1195 	call	_assert_failed
+      000655 5B 06            [ 2] 1196 	addw	sp, #6
+      000657 84               [ 1] 1197 	pop	a
+      000658                       1198 00119$:
+                                   1199 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 579: if ((UART1->CR4 & (uint8_t)UART1_FLAG) != (uint8_t)0x00)
+      000658 88               [ 1] 1200 	push	a
+      000659 7B 07            [ 1] 1201 	ld	a, (0x07, sp)
+      00065B 6B 03            [ 1] 1202 	ld	(0x03, sp), a
+      00065D 84               [ 1] 1203 	pop	a
+                                   1204 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 577: if (UART1_FLAG == UART1_FLAG_LBDF)
+      00065E 4D               [ 1] 1205 	tnz	a
+      00065F 27 10            [ 1] 1206 	jreq	00114$
+                                   1207 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 579: if ((UART1->CR4 & (uint8_t)UART1_FLAG) != (uint8_t)0x00)
+      000661 AE 52 37         [ 2] 1208 	ldw	x, #0x5237
+      000664 F6               [ 1] 1209 	ld	a, (x)
+      000665 14 02            [ 1] 1210 	and	a, (0x02, sp)
+      000667 4D               [ 1] 1211 	tnz	a
+      000668 27 04            [ 1] 1212 	jreq	00102$
+                                   1213 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 582: status = SET;
+      00066A A6 01            [ 1] 1214 	ld	a, #0x01
+      00066C 20 24            [ 2] 1215 	jra	00115$
+      00066E                       1216 00102$:
+                                   1217 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 587: status = RESET;
+      00066E 4F               [ 1] 1218 	clr	a
+      00066F 20 21            [ 2] 1219 	jra	00115$
+      000671                       1220 00114$:
+                                   1221 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 590: else if (UART1_FLAG == UART1_FLAG_SBK)
+      000671 0D 01            [ 1] 1222 	tnz	(0x01, sp)
+      000673 27 10            [ 1] 1223 	jreq	00111$
+                                   1224 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 592: if ((UART1->CR2 & (uint8_t)UART1_FLAG) != (uint8_t)0x00)
+      000675 AE 52 35         [ 2] 1225 	ldw	x, #0x5235
+      000678 F6               [ 1] 1226 	ld	a, (x)
+      000679 14 02            [ 1] 1227 	and	a, (0x02, sp)
+      00067B 4D               [ 1] 1228 	tnz	a
+      00067C 27 04            [ 1] 1229 	jreq	00105$
+                                   1230 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 595: status = SET;
+      00067E A6 01            [ 1] 1231 	ld	a, #0x01
+      000680 20 10            [ 2] 1232 	jra	00115$
+      000682                       1233 00105$:
+                                   1234 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 600: status = RESET;
+      000682 4F               [ 1] 1235 	clr	a
+      000683 20 0D            [ 2] 1236 	jra	00115$
+      000685                       1237 00111$:
+                                   1238 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 605: if ((UART1->SR & (uint8_t)UART1_FLAG) != (uint8_t)0x00)
+      000685 AE 52 30         [ 2] 1239 	ldw	x, #0x5230
+      000688 F6               [ 1] 1240 	ld	a, (x)
+      000689 14 02            [ 1] 1241 	and	a, (0x02, sp)
+      00068B 4D               [ 1] 1242 	tnz	a
+      00068C 27 03            [ 1] 1243 	jreq	00108$
+                                   1244 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 608: status = SET;
+      00068E A6 01            [ 1] 1245 	ld	a, #0x01
+                                   1246 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 613: status = RESET;
+      000690 21                    1247 	.byte 0x21
+      000691                       1248 00108$:
+      000691 4F               [ 1] 1249 	clr	a
+      000692                       1250 00115$:
+                                   1251 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 617: return status;
+      000692 85               [ 2] 1252 	popw	x
+      000693 81               [ 4] 1253 	ret
+                                   1254 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 646: void UART1_ClearFlag(UART1_Flag_TypeDef UART1_FLAG)
+                                   1255 ;	-----------------------------------------
+                                   1256 ;	 function UART1_ClearFlag
+                                   1257 ;	-----------------------------------------
+      000694                       1258 _UART1_ClearFlag:
+      000694 88               [ 1] 1259 	push	a
+                                   1260 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 648: assert_param(IS_UART1_CLEAR_FLAG_OK(UART1_FLAG));
+      000695 1E 04            [ 2] 1261 	ldw	x, (0x04, sp)
+      000697 A3 00 20         [ 2] 1262 	cpw	x, #0x0020
+      00069A 26 06            [ 1] 1263 	jrne	00124$
+      00069C A6 01            [ 1] 1264 	ld	a, #0x01
+      00069E 6B 01            [ 1] 1265 	ld	(0x01, sp), a
+      0006A0 20 02            [ 2] 1266 	jra	00125$
+      0006A2                       1267 00124$:
+      0006A2 0F 01            [ 1] 1268 	clr	(0x01, sp)
+      0006A4                       1269 00125$:
+      0006A4 0D 01            [ 1] 1270 	tnz	(0x01, sp)
+      0006A6 26 18            [ 1] 1271 	jrne	00107$
+      0006A8 1E 04            [ 2] 1272 	ldw	x, (0x04, sp)
+      0006AA A3 02 10         [ 2] 1273 	cpw	x, #0x0210
+      0006AD 27 11            [ 1] 1274 	jreq	00107$
+      0006AF 90 AEr07rF3      [ 2] 1275 	ldw	y, #___str_0+0
+      0006B3 4B 88            [ 1] 1276 	push	#0x88
+      0006B5 4B 02            [ 1] 1277 	push	#0x02
+      0006B7 5F               [ 1] 1278 	clrw	x
+      0006B8 89               [ 2] 1279 	pushw	x
+      0006B9 90 89            [ 2] 1280 	pushw	y
+      0006BB CDr00r00         [ 4] 1281 	call	_assert_failed
+      0006BE 5B 06            [ 2] 1282 	addw	sp, #6
+      0006C0                       1283 00107$:
+                                   1284 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 651: if (UART1_FLAG == UART1_FLAG_RXNE)
+      0006C0 0D 01            [ 1] 1285 	tnz	(0x01, sp)
+      0006C2 27 06            [ 1] 1286 	jreq	00102$
+                                   1287 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 653: UART1->SR = (uint8_t)~(UART1_SR_RXNE);
+      0006C4 35 DF 52 30      [ 1] 1288 	mov	0x5230+0, #0xdf
+      0006C8 20 07            [ 2] 1289 	jra	00104$
+      0006CA                       1290 00102$:
+                                   1291 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 658: UART1->CR4 &= (uint8_t)~(UART1_CR4_LBDF);
+      0006CA AE 52 37         [ 2] 1292 	ldw	x, #0x5237
+      0006CD F6               [ 1] 1293 	ld	a, (x)
+      0006CE A4 EF            [ 1] 1294 	and	a, #0xef
+      0006D0 F7               [ 1] 1295 	ld	(x), a
+      0006D1                       1296 00104$:
+      0006D1 84               [ 1] 1297 	pop	a
+      0006D2 81               [ 4] 1298 	ret
+                                   1299 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 675: ITStatus UART1_GetITStatus(UART1_IT_TypeDef UART1_IT)
+                                   1300 ;	-----------------------------------------
+                                   1301 ;	 function UART1_GetITStatus
+                                   1302 ;	-----------------------------------------
+      0006D3                       1303 _UART1_GetITStatus:
+      0006D3 52 07            [ 2] 1304 	sub	sp, #7
+                                   1305 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 684: assert_param(IS_UART1_GET_IT_OK(UART1_IT));
+      0006D5 1E 0A            [ 2] 1306 	ldw	x, (0x0a, sp)
+      0006D7 A3 03 46         [ 2] 1307 	cpw	x, #0x0346
+      0006DA 26 06            [ 1] 1308 	jrne	00202$
+      0006DC A6 01            [ 1] 1309 	ld	a, #0x01
+      0006DE 6B 05            [ 1] 1310 	ld	(0x05, sp), a
+      0006E0 20 02            [ 2] 1311 	jra	00203$
+      0006E2                       1312 00202$:
+      0006E2 0F 05            [ 1] 1313 	clr	(0x05, sp)
+      0006E4                       1314 00203$:
+      0006E4 1E 0A            [ 2] 1315 	ldw	x, (0x0a, sp)
+      0006E6 A3 01 00         [ 2] 1316 	cpw	x, #0x0100
+      0006E9 26 06            [ 1] 1317 	jrne	00205$
+      0006EB A6 01            [ 1] 1318 	ld	a, #0x01
+      0006ED 6B 04            [ 1] 1319 	ld	(0x04, sp), a
+      0006EF 20 02            [ 2] 1320 	jra	00206$
+      0006F1                       1321 00205$:
+      0006F1 0F 04            [ 1] 1322 	clr	(0x04, sp)
+      0006F3                       1323 00206$:
+      0006F3 1E 0A            [ 2] 1324 	ldw	x, (0x0a, sp)
+      0006F5 A3 02 77         [ 2] 1325 	cpw	x, #0x0277
+      0006F8 27 35            [ 1] 1326 	jreq	00122$
+      0006FA 1E 0A            [ 2] 1327 	ldw	x, (0x0a, sp)
+      0006FC A3 02 66         [ 2] 1328 	cpw	x, #0x0266
+      0006FF 27 2E            [ 1] 1329 	jreq	00122$
+      000701 1E 0A            [ 2] 1330 	ldw	x, (0x0a, sp)
+      000703 A3 02 55         [ 2] 1331 	cpw	x, #0x0255
+      000706 27 27            [ 1] 1332 	jreq	00122$
+      000708 1E 0A            [ 2] 1333 	ldw	x, (0x0a, sp)
+      00070A A3 02 44         [ 2] 1334 	cpw	x, #0x0244
+      00070D 27 20            [ 1] 1335 	jreq	00122$
+      00070F 1E 0A            [ 2] 1336 	ldw	x, (0x0a, sp)
+      000711 A3 02 35         [ 2] 1337 	cpw	x, #0x0235
+      000714 27 19            [ 1] 1338 	jreq	00122$
+      000716 0D 05            [ 1] 1339 	tnz	(0x05, sp)
+      000718 26 15            [ 1] 1340 	jrne	00122$
+      00071A 0D 04            [ 1] 1341 	tnz	(0x04, sp)
+      00071C 26 11            [ 1] 1342 	jrne	00122$
+      00071E 90 AEr07rF3      [ 2] 1343 	ldw	y, #___str_0+0
+      000722 4B AC            [ 1] 1344 	push	#0xac
+      000724 4B 02            [ 1] 1345 	push	#0x02
+      000726 5F               [ 1] 1346 	clrw	x
+      000727 89               [ 2] 1347 	pushw	x
+      000728 90 89            [ 2] 1348 	pushw	y
+      00072A CDr00r00         [ 4] 1349 	call	_assert_failed
+      00072D 5B 06            [ 2] 1350 	addw	sp, #6
+      00072F                       1351 00122$:
+                                   1352 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 687: itpos = (uint8_t)((uint8_t)1 << (uint8_t)((uint8_t)UART1_IT & (uint8_t)0x0F));
+      00072F 7B 0B            [ 1] 1353 	ld	a, (0x0b, sp)
+      000731 95               [ 1] 1354 	ld	xh, a
+      000732 A4 0F            [ 1] 1355 	and	a, #0x0f
+      000734 97               [ 1] 1356 	ld	xl, a
+      000735 A6 01            [ 1] 1357 	ld	a, #0x01
+      000737 88               [ 1] 1358 	push	a
+      000738 9F               [ 1] 1359 	ld	a, xl
+      000739 4D               [ 1] 1360 	tnz	a
+      00073A 27 05            [ 1] 1361 	jreq	00225$
+      00073C                       1362 00224$:
+      00073C 08 01            [ 1] 1363 	sll	(1, sp)
+      00073E 4A               [ 1] 1364 	dec	a
+      00073F 26 FB            [ 1] 1365 	jrne	00224$
+      000741                       1366 00225$:
+      000741 84               [ 1] 1367 	pop	a
+      000742 6B 03            [ 1] 1368 	ld	(0x03, sp), a
+                                   1369 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 689: itmask1 = (uint8_t)((uint8_t)UART1_IT >> (uint8_t)4);
+      000744 02               [ 1] 1370 	rlwa	x
+      000745 4E               [ 1] 1371 	swap	a
+      000746 A4 0F            [ 1] 1372 	and	a, #0x0f
+      000748 01               [ 1] 1373 	rrwa	x
+                                   1374 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 691: itmask2 = (uint8_t)((uint8_t)1 << itmask1);
+      000749 A6 01            [ 1] 1375 	ld	a, #0x01
+      00074B 88               [ 1] 1376 	push	a
+      00074C 9E               [ 1] 1377 	ld	a, xh
+      00074D 4D               [ 1] 1378 	tnz	a
+      00074E 27 05            [ 1] 1379 	jreq	00227$
+      000750                       1380 00226$:
+      000750 08 01            [ 1] 1381 	sll	(1, sp)
+      000752 4A               [ 1] 1382 	dec	a
+      000753 26 FB            [ 1] 1383 	jrne	00226$
+      000755                       1384 00227$:
+      000755 84               [ 1] 1385 	pop	a
+      000756 6B 02            [ 1] 1386 	ld	(0x02, sp), a
+                                   1387 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 695: if (UART1_IT == UART1_IT_PE)
+      000758 0D 04            [ 1] 1388 	tnz	(0x04, sp)
+      00075A 27 1C            [ 1] 1389 	jreq	00117$
+                                   1390 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 698: enablestatus = (uint8_t)((uint8_t)UART1->CR1 & itmask2);
+      00075C AE 52 34         [ 2] 1391 	ldw	x, #0x5234
+      00075F F6               [ 1] 1392 	ld	a, (x)
+      000760 14 02            [ 1] 1393 	and	a, (0x02, sp)
+      000762 6B 07            [ 1] 1394 	ld	(0x07, sp), a
+                                   1395 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 701: if (((UART1->SR & itpos) != (uint8_t)0x00) && enablestatus)
+      000764 AE 52 30         [ 2] 1396 	ldw	x, #0x5230
+      000767 F6               [ 1] 1397 	ld	a, (x)
+      000768 14 03            [ 1] 1398 	and	a, (0x03, sp)
+      00076A 4D               [ 1] 1399 	tnz	a
+      00076B 27 08            [ 1] 1400 	jreq	00102$
+      00076D 0D 07            [ 1] 1401 	tnz	(0x07, sp)
+      00076F 27 04            [ 1] 1402 	jreq	00102$
+                                   1403 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 704: pendingbitstatus = SET;
+      000771 A6 01            [ 1] 1404 	ld	a, #0x01
+      000773 20 3C            [ 2] 1405 	jra	00118$
+      000775                       1406 00102$:
+                                   1407 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 709: pendingbitstatus = RESET;
+      000775 4F               [ 1] 1408 	clr	a
+      000776 20 39            [ 2] 1409 	jra	00118$
+      000778                       1410 00117$:
+                                   1411 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 713: else if (UART1_IT == UART1_IT_LBDF)
+      000778 0D 05            [ 1] 1412 	tnz	(0x05, sp)
+      00077A 27 1C            [ 1] 1413 	jreq	00114$
+                                   1414 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 716: enablestatus = (uint8_t)((uint8_t)UART1->CR4 & itmask2);
+      00077C AE 52 37         [ 2] 1415 	ldw	x, #0x5237
+      00077F F6               [ 1] 1416 	ld	a, (x)
+      000780 14 02            [ 1] 1417 	and	a, (0x02, sp)
+      000782 6B 01            [ 1] 1418 	ld	(0x01, sp), a
+                                   1419 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 718: if (((UART1->CR4 & itpos) != (uint8_t)0x00) && enablestatus)
+      000784 AE 52 37         [ 2] 1420 	ldw	x, #0x5237
+      000787 F6               [ 1] 1421 	ld	a, (x)
+      000788 14 03            [ 1] 1422 	and	a, (0x03, sp)
+      00078A 4D               [ 1] 1423 	tnz	a
+      00078B 27 08            [ 1] 1424 	jreq	00106$
+      00078D 0D 01            [ 1] 1425 	tnz	(0x01, sp)
+      00078F 27 04            [ 1] 1426 	jreq	00106$
+                                   1427 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 721: pendingbitstatus = SET;
+      000791 A6 01            [ 1] 1428 	ld	a, #0x01
+      000793 20 1C            [ 2] 1429 	jra	00118$
+      000795                       1430 00106$:
+                                   1431 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 726: pendingbitstatus = RESET;
+      000795 4F               [ 1] 1432 	clr	a
+      000796 20 19            [ 2] 1433 	jra	00118$
+      000798                       1434 00114$:
+                                   1435 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 732: enablestatus = (uint8_t)((uint8_t)UART1->CR2 & itmask2);
+      000798 AE 52 35         [ 2] 1436 	ldw	x, #0x5235
+      00079B F6               [ 1] 1437 	ld	a, (x)
+      00079C 14 02            [ 1] 1438 	and	a, (0x02, sp)
+      00079E 6B 06            [ 1] 1439 	ld	(0x06, sp), a
+                                   1440 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 734: if (((UART1->SR & itpos) != (uint8_t)0x00) && enablestatus)
+      0007A0 AE 52 30         [ 2] 1441 	ldw	x, #0x5230
+      0007A3 F6               [ 1] 1442 	ld	a, (x)
+      0007A4 14 03            [ 1] 1443 	and	a, (0x03, sp)
+      0007A6 4D               [ 1] 1444 	tnz	a
+      0007A7 27 07            [ 1] 1445 	jreq	00110$
+      0007A9 0D 06            [ 1] 1446 	tnz	(0x06, sp)
+      0007AB 27 03            [ 1] 1447 	jreq	00110$
+                                   1448 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 737: pendingbitstatus = SET;
+      0007AD A6 01            [ 1] 1449 	ld	a, #0x01
+                                   1450 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 742: pendingbitstatus = RESET;
+      0007AF 21                    1451 	.byte 0x21
+      0007B0                       1452 00110$:
+      0007B0 4F               [ 1] 1453 	clr	a
+      0007B1                       1454 00118$:
+                                   1455 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 747: return  pendingbitstatus;
+      0007B1 5B 07            [ 2] 1456 	addw	sp, #7
+      0007B3 81               [ 4] 1457 	ret
+                                   1458 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 775: void UART1_ClearITPendingBit(UART1_IT_TypeDef UART1_IT)
+                                   1459 ;	-----------------------------------------
+                                   1460 ;	 function UART1_ClearITPendingBit
+                                   1461 ;	-----------------------------------------
+      0007B4                       1462 _UART1_ClearITPendingBit:
+      0007B4 88               [ 1] 1463 	push	a
+                                   1464 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 777: assert_param(IS_UART1_CLEAR_IT_OK(UART1_IT));
+      0007B5 1E 04            [ 2] 1465 	ldw	x, (0x04, sp)
+      0007B7 A3 02 55         [ 2] 1466 	cpw	x, #0x0255
+      0007BA 26 06            [ 1] 1467 	jrne	00124$
+      0007BC A6 01            [ 1] 1468 	ld	a, #0x01
+      0007BE 6B 01            [ 1] 1469 	ld	(0x01, sp), a
+      0007C0 20 02            [ 2] 1470 	jra	00125$
+      0007C2                       1471 00124$:
+      0007C2 0F 01            [ 1] 1472 	clr	(0x01, sp)
+      0007C4                       1473 00125$:
+      0007C4 0D 01            [ 1] 1474 	tnz	(0x01, sp)
+      0007C6 26 18            [ 1] 1475 	jrne	00107$
+      0007C8 1E 04            [ 2] 1476 	ldw	x, (0x04, sp)
+      0007CA A3 03 46         [ 2] 1477 	cpw	x, #0x0346
+      0007CD 27 11            [ 1] 1478 	jreq	00107$
+      0007CF 90 AEr07rF3      [ 2] 1479 	ldw	y, #___str_0+0
+      0007D3 4B 09            [ 1] 1480 	push	#0x09
+      0007D5 4B 03            [ 1] 1481 	push	#0x03
+      0007D7 5F               [ 1] 1482 	clrw	x
+      0007D8 89               [ 2] 1483 	pushw	x
+      0007D9 90 89            [ 2] 1484 	pushw	y
+      0007DB CDr00r00         [ 4] 1485 	call	_assert_failed
+      0007DE 5B 06            [ 2] 1486 	addw	sp, #6
+      0007E0                       1487 00107$:
+                                   1488 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 780: if (UART1_IT == UART1_IT_RXNE)
+      0007E0 0D 01            [ 1] 1489 	tnz	(0x01, sp)
+      0007E2 27 06            [ 1] 1490 	jreq	00102$
+                                   1491 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 782: UART1->SR = (uint8_t)~(UART1_SR_RXNE);
+      0007E4 35 DF 52 30      [ 1] 1492 	mov	0x5230+0, #0xdf
+      0007E8 20 07            [ 2] 1493 	jra	00104$
+      0007EA                       1494 00102$:
+                                   1495 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_uart1.c: 787: UART1->CR4 &= (uint8_t)~(UART1_CR4_LBDF);
+      0007EA AE 52 37         [ 2] 1496 	ldw	x, #0x5237
+      0007ED F6               [ 1] 1497 	ld	a, (x)
+      0007EE A4 EF            [ 1] 1498 	and	a, #0xef
+      0007F0 F7               [ 1] 1499 	ld	(x), a
+      0007F1                       1500 00104$:
+      0007F1 84               [ 1] 1501 	pop	a
+      0007F2 81               [ 4] 1502 	ret
+                                   1503 	.area CODE
+      0007F3                       1504 ___str_0:
+      0007F3 2F 68 6F 6D 65 2F 64  1505 	.ascii "/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver"
+             6F 6E 67 76 69 65 74
+             2F 70 72 6F 6A 65 63
+             74 2F 32 30 31 36 2F
+             74 6F 6F 6C 2F 73 74
+             6D 38 2F 53 54 4D 38
+             53 5F 53 74 64 50 65
+             72 69 70 68 5F 44 72
+             69 76 65 72
+      00082F 2F 73 72 63 2F 73 74  1506 	.ascii "/src/stm8s003/stm8s_uart1.c"
+             6D 38 73 30 30 33 2F
+             73 74 6D 38 73 5F 75
+             61 72 74 31 2E 63
+      00084A 00                    1507 	.db 0x00
+                                   1508 	.area INITIALIZER
+                                   1509 	.area CABS (ABS)

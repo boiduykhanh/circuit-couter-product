@@ -1,0 +1,1428 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Fri Jul 22 15:04:25 2016
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_clk
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _CLKPrescTable
+                                     13 	.globl _HSIDivFactor
+                                     14 	.globl _assert_failed
+                                     15 	.globl _CLK_DeInit
+                                     16 	.globl _CLK_FastHaltWakeUpCmd
+                                     17 	.globl _CLK_HSECmd
+                                     18 	.globl _CLK_HSICmd
+                                     19 	.globl _CLK_LSICmd
+                                     20 	.globl _CLK_CCOCmd
+                                     21 	.globl _CLK_ClockSwitchCmd
+                                     22 	.globl _CLK_SlowActiveHaltWakeUpCmd
+                                     23 	.globl _CLK_PeripheralClockConfig
+                                     24 	.globl _CLK_ClockSwitchConfig
+                                     25 	.globl _CLK_HSIPrescalerConfig
+                                     26 	.globl _CLK_CCOConfig
+                                     27 	.globl _CLK_ITConfig
+                                     28 	.globl _CLK_SYSCLKConfig
+                                     29 	.globl _CLK_SWIMConfig
+                                     30 	.globl _CLK_ClockSecuritySystemEnable
+                                     31 	.globl _CLK_GetSYSCLKSource
+                                     32 	.globl _CLK_GetClockFreq
+                                     33 	.globl _CLK_AdjustHSICalibrationValue
+                                     34 	.globl _CLK_SYSCLKEmergencyClear
+                                     35 	.globl _CLK_GetFlagStatus
+                                     36 	.globl _CLK_GetITStatus
+                                     37 	.globl _CLK_ClearITPendingBit
+                                     38 ;--------------------------------------------------------
+                                     39 ; ram data
+                                     40 ;--------------------------------------------------------
+                                     41 	.area DATA
+                                     42 ;--------------------------------------------------------
+                                     43 ; ram data
+                                     44 ;--------------------------------------------------------
+                                     45 	.area INITIALIZED
+                                     46 ;--------------------------------------------------------
+                                     47 ; absolute external ram data
+                                     48 ;--------------------------------------------------------
+                                     49 	.area DABS (ABS)
+                                     50 ;--------------------------------------------------------
+                                     51 ; global & static initialisations
+                                     52 ;--------------------------------------------------------
+                                     53 	.area HOME
+                                     54 	.area GSINIT
+                                     55 	.area GSFINAL
+                                     56 	.area GSINIT
+                                     57 ;--------------------------------------------------------
+                                     58 ; Home
+                                     59 ;--------------------------------------------------------
+                                     60 	.area HOME
+                                     61 	.area HOME
+                                     62 ;--------------------------------------------------------
+                                     63 ; code
+                                     64 ;--------------------------------------------------------
+                                     65 	.area CODE
+                                     66 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 72: void CLK_DeInit(void)
+                                     67 ;	-----------------------------------------
+                                     68 ;	 function CLK_DeInit
+                                     69 ;	-----------------------------------------
+      000000                         70 _CLK_DeInit:
+                                     71 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 74: CLK->ICKR = CLK_ICKR_RESET_VALUE;
+      000000 35 01 50 C0      [ 1]   72 	mov	0x50c0+0, #0x01
+                                     73 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 75: CLK->ECKR = CLK_ECKR_RESET_VALUE;
+      000004 35 00 50 C1      [ 1]   74 	mov	0x50c1+0, #0x00
+                                     75 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 76: CLK->SWR  = CLK_SWR_RESET_VALUE;
+      000008 35 E1 50 C4      [ 1]   76 	mov	0x50c4+0, #0xe1
+                                     77 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 77: CLK->SWCR = CLK_SWCR_RESET_VALUE;
+      00000C 35 00 50 C5      [ 1]   78 	mov	0x50c5+0, #0x00
+                                     79 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 78: CLK->CKDIVR = CLK_CKDIVR_RESET_VALUE;
+      000010 35 18 50 C6      [ 1]   80 	mov	0x50c6+0, #0x18
+                                     81 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 79: CLK->PCKENR1 = CLK_PCKENR1_RESET_VALUE;
+      000014 35 FF 50 C7      [ 1]   82 	mov	0x50c7+0, #0xff
+                                     83 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 80: CLK->PCKENR2 = CLK_PCKENR2_RESET_VALUE;
+      000018 35 FF 50 CA      [ 1]   84 	mov	0x50ca+0, #0xff
+                                     85 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 81: CLK->CSSR = CLK_CSSR_RESET_VALUE;
+      00001C 35 00 50 C8      [ 1]   86 	mov	0x50c8+0, #0x00
+                                     87 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 82: CLK->CCOR = CLK_CCOR_RESET_VALUE;
+      000020 35 00 50 C9      [ 1]   88 	mov	0x50c9+0, #0x00
+                                     89 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 83: while ((CLK->CCOR & CLK_CCOR_CCOEN)!= 0)
+      000024                         90 00101$:
+      000024 AE 50 C9         [ 2]   91 	ldw	x, #0x50c9
+      000027 F6               [ 1]   92 	ld	a, (x)
+      000028 44               [ 1]   93 	srl	a
+      000029 25 F9            [ 1]   94 	jrc	00101$
+                                     95 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 85: CLK->CCOR = CLK_CCOR_RESET_VALUE;
+      00002B 35 00 50 C9      [ 1]   96 	mov	0x50c9+0, #0x00
+                                     97 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 86: CLK->HSITRIMR = CLK_HSITRIMR_RESET_VALUE;
+      00002F 35 00 50 CC      [ 1]   98 	mov	0x50cc+0, #0x00
+                                     99 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 87: CLK->SWIMCCR = CLK_SWIMCCR_RESET_VALUE;
+      000033 35 00 50 CD      [ 1]  100 	mov	0x50cd+0, #0x00
+      000037 81               [ 4]  101 	ret
+                                    102 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 99: void CLK_FastHaltWakeUpCmd(FunctionalState NewState)
+                                    103 ;	-----------------------------------------
+                                    104 ;	 function CLK_FastHaltWakeUpCmd
+                                    105 ;	-----------------------------------------
+      000038                        106 _CLK_FastHaltWakeUpCmd:
+                                    107 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 102: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      000038 0D 03            [ 1]  108 	tnz	(0x03, sp)
+      00003A 27 17            [ 1]  109 	jreq	00107$
+      00003C 7B 03            [ 1]  110 	ld	a, (0x03, sp)
+      00003E A1 01            [ 1]  111 	cp	a, #0x01
+      000040 27 11            [ 1]  112 	jreq	00107$
+      000042 90 AEr07r75      [ 2]  113 	ldw	y, #___str_0+0
+      000046 4B 66            [ 1]  114 	push	#0x66
+      000048 5F               [ 1]  115 	clrw	x
+      000049 89               [ 2]  116 	pushw	x
+      00004A 4B 00            [ 1]  117 	push	#0x00
+      00004C 90 89            [ 2]  118 	pushw	y
+      00004E CDr00r00         [ 4]  119 	call	_assert_failed
+      000051 5B 06            [ 2]  120 	addw	sp, #6
+      000053                        121 00107$:
+                                    122 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 104: if (NewState != DISABLE)
+      000053 0D 03            [ 1]  123 	tnz	(0x03, sp)
+      000055 27 09            [ 1]  124 	jreq	00102$
+                                    125 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 107: CLK->ICKR |= CLK_ICKR_FHWU;
+      000057 AE 50 C0         [ 2]  126 	ldw	x, #0x50c0
+      00005A F6               [ 1]  127 	ld	a, (x)
+      00005B AA 04            [ 1]  128 	or	a, #0x04
+      00005D F7               [ 1]  129 	ld	(x), a
+      00005E 20 07            [ 2]  130 	jra	00104$
+      000060                        131 00102$:
+                                    132 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 112: CLK->ICKR &= (uint8_t)(~CLK_ICKR_FHWU);
+      000060 AE 50 C0         [ 2]  133 	ldw	x, #0x50c0
+      000063 F6               [ 1]  134 	ld	a, (x)
+      000064 A4 FB            [ 1]  135 	and	a, #0xfb
+      000066 F7               [ 1]  136 	ld	(x), a
+      000067                        137 00104$:
+      000067 81               [ 4]  138 	ret
+                                    139 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 121: void CLK_HSECmd(FunctionalState NewState)
+                                    140 ;	-----------------------------------------
+                                    141 ;	 function CLK_HSECmd
+                                    142 ;	-----------------------------------------
+      000068                        143 _CLK_HSECmd:
+                                    144 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 124: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      000068 0D 03            [ 1]  145 	tnz	(0x03, sp)
+      00006A 27 17            [ 1]  146 	jreq	00107$
+      00006C 7B 03            [ 1]  147 	ld	a, (0x03, sp)
+      00006E A1 01            [ 1]  148 	cp	a, #0x01
+      000070 27 11            [ 1]  149 	jreq	00107$
+      000072 90 AEr07r75      [ 2]  150 	ldw	y, #___str_0+0
+      000076 4B 7C            [ 1]  151 	push	#0x7c
+      000078 5F               [ 1]  152 	clrw	x
+      000079 89               [ 2]  153 	pushw	x
+      00007A 4B 00            [ 1]  154 	push	#0x00
+      00007C 90 89            [ 2]  155 	pushw	y
+      00007E CDr00r00         [ 4]  156 	call	_assert_failed
+      000081 5B 06            [ 2]  157 	addw	sp, #6
+      000083                        158 00107$:
+                                    159 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 126: if (NewState != DISABLE)
+      000083 0D 03            [ 1]  160 	tnz	(0x03, sp)
+      000085 27 06            [ 1]  161 	jreq	00102$
+                                    162 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 129: CLK->ECKR |= CLK_ECKR_HSEEN;
+      000087 72 10 50 C1      [ 1]  163 	bset	0x50c1, #0
+      00008B 20 04            [ 2]  164 	jra	00104$
+      00008D                        165 00102$:
+                                    166 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 134: CLK->ECKR &= (uint8_t)(~CLK_ECKR_HSEEN);
+      00008D 72 11 50 C1      [ 1]  167 	bres	0x50c1, #0
+      000091                        168 00104$:
+      000091 81               [ 4]  169 	ret
+                                    170 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 143: void CLK_HSICmd(FunctionalState NewState)
+                                    171 ;	-----------------------------------------
+                                    172 ;	 function CLK_HSICmd
+                                    173 ;	-----------------------------------------
+      000092                        174 _CLK_HSICmd:
+                                    175 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 146: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      000092 0D 03            [ 1]  176 	tnz	(0x03, sp)
+      000094 27 17            [ 1]  177 	jreq	00107$
+      000096 7B 03            [ 1]  178 	ld	a, (0x03, sp)
+      000098 A1 01            [ 1]  179 	cp	a, #0x01
+      00009A 27 11            [ 1]  180 	jreq	00107$
+      00009C 90 AEr07r75      [ 2]  181 	ldw	y, #___str_0+0
+      0000A0 4B 92            [ 1]  182 	push	#0x92
+      0000A2 5F               [ 1]  183 	clrw	x
+      0000A3 89               [ 2]  184 	pushw	x
+      0000A4 4B 00            [ 1]  185 	push	#0x00
+      0000A6 90 89            [ 2]  186 	pushw	y
+      0000A8 CDr00r00         [ 4]  187 	call	_assert_failed
+      0000AB 5B 06            [ 2]  188 	addw	sp, #6
+      0000AD                        189 00107$:
+                                    190 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 148: if (NewState != DISABLE)
+      0000AD 0D 03            [ 1]  191 	tnz	(0x03, sp)
+      0000AF 27 06            [ 1]  192 	jreq	00102$
+                                    193 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 151: CLK->ICKR |= CLK_ICKR_HSIEN;
+      0000B1 72 10 50 C0      [ 1]  194 	bset	0x50c0, #0
+      0000B5 20 04            [ 2]  195 	jra	00104$
+      0000B7                        196 00102$:
+                                    197 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 156: CLK->ICKR &= (uint8_t)(~CLK_ICKR_HSIEN);
+      0000B7 72 11 50 C0      [ 1]  198 	bres	0x50c0, #0
+      0000BB                        199 00104$:
+      0000BB 81               [ 4]  200 	ret
+                                    201 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 166: void CLK_LSICmd(FunctionalState NewState)
+                                    202 ;	-----------------------------------------
+                                    203 ;	 function CLK_LSICmd
+                                    204 ;	-----------------------------------------
+      0000BC                        205 _CLK_LSICmd:
+                                    206 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 169: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      0000BC 0D 03            [ 1]  207 	tnz	(0x03, sp)
+      0000BE 27 17            [ 1]  208 	jreq	00107$
+      0000C0 7B 03            [ 1]  209 	ld	a, (0x03, sp)
+      0000C2 A1 01            [ 1]  210 	cp	a, #0x01
+      0000C4 27 11            [ 1]  211 	jreq	00107$
+      0000C6 90 AEr07r75      [ 2]  212 	ldw	y, #___str_0+0
+      0000CA 4B A9            [ 1]  213 	push	#0xa9
+      0000CC 5F               [ 1]  214 	clrw	x
+      0000CD 89               [ 2]  215 	pushw	x
+      0000CE 4B 00            [ 1]  216 	push	#0x00
+      0000D0 90 89            [ 2]  217 	pushw	y
+      0000D2 CDr00r00         [ 4]  218 	call	_assert_failed
+      0000D5 5B 06            [ 2]  219 	addw	sp, #6
+      0000D7                        220 00107$:
+                                    221 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 171: if (NewState != DISABLE)
+      0000D7 0D 03            [ 1]  222 	tnz	(0x03, sp)
+      0000D9 27 09            [ 1]  223 	jreq	00102$
+                                    224 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 174: CLK->ICKR |= CLK_ICKR_LSIEN;
+      0000DB AE 50 C0         [ 2]  225 	ldw	x, #0x50c0
+      0000DE F6               [ 1]  226 	ld	a, (x)
+      0000DF AA 08            [ 1]  227 	or	a, #0x08
+      0000E1 F7               [ 1]  228 	ld	(x), a
+      0000E2 20 07            [ 2]  229 	jra	00104$
+      0000E4                        230 00102$:
+                                    231 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 179: CLK->ICKR &= (uint8_t)(~CLK_ICKR_LSIEN);
+      0000E4 AE 50 C0         [ 2]  232 	ldw	x, #0x50c0
+      0000E7 F6               [ 1]  233 	ld	a, (x)
+      0000E8 A4 F7            [ 1]  234 	and	a, #0xf7
+      0000EA F7               [ 1]  235 	ld	(x), a
+      0000EB                        236 00104$:
+      0000EB 81               [ 4]  237 	ret
+                                    238 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 189: void CLK_CCOCmd(FunctionalState NewState)
+                                    239 ;	-----------------------------------------
+                                    240 ;	 function CLK_CCOCmd
+                                    241 ;	-----------------------------------------
+      0000EC                        242 _CLK_CCOCmd:
+                                    243 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 192: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      0000EC 0D 03            [ 1]  244 	tnz	(0x03, sp)
+      0000EE 27 17            [ 1]  245 	jreq	00107$
+      0000F0 7B 03            [ 1]  246 	ld	a, (0x03, sp)
+      0000F2 A1 01            [ 1]  247 	cp	a, #0x01
+      0000F4 27 11            [ 1]  248 	jreq	00107$
+      0000F6 90 AEr07r75      [ 2]  249 	ldw	y, #___str_0+0
+      0000FA 4B C0            [ 1]  250 	push	#0xc0
+      0000FC 5F               [ 1]  251 	clrw	x
+      0000FD 89               [ 2]  252 	pushw	x
+      0000FE 4B 00            [ 1]  253 	push	#0x00
+      000100 90 89            [ 2]  254 	pushw	y
+      000102 CDr00r00         [ 4]  255 	call	_assert_failed
+      000105 5B 06            [ 2]  256 	addw	sp, #6
+      000107                        257 00107$:
+                                    258 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 194: if (NewState != DISABLE)
+      000107 0D 03            [ 1]  259 	tnz	(0x03, sp)
+      000109 27 06            [ 1]  260 	jreq	00102$
+                                    261 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 197: CLK->CCOR |= CLK_CCOR_CCOEN;
+      00010B 72 10 50 C9      [ 1]  262 	bset	0x50c9, #0
+      00010F 20 04            [ 2]  263 	jra	00104$
+      000111                        264 00102$:
+                                    265 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 202: CLK->CCOR &= (uint8_t)(~CLK_CCOR_CCOEN);
+      000111 72 11 50 C9      [ 1]  266 	bres	0x50c9, #0
+      000115                        267 00104$:
+      000115 81               [ 4]  268 	ret
+                                    269 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 213: void CLK_ClockSwitchCmd(FunctionalState NewState)
+                                    270 ;	-----------------------------------------
+                                    271 ;	 function CLK_ClockSwitchCmd
+                                    272 ;	-----------------------------------------
+      000116                        273 _CLK_ClockSwitchCmd:
+                                    274 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 216: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      000116 0D 03            [ 1]  275 	tnz	(0x03, sp)
+      000118 27 17            [ 1]  276 	jreq	00107$
+      00011A 7B 03            [ 1]  277 	ld	a, (0x03, sp)
+      00011C A1 01            [ 1]  278 	cp	a, #0x01
+      00011E 27 11            [ 1]  279 	jreq	00107$
+      000120 90 AEr07r75      [ 2]  280 	ldw	y, #___str_0+0
+      000124 4B D8            [ 1]  281 	push	#0xd8
+      000126 5F               [ 1]  282 	clrw	x
+      000127 89               [ 2]  283 	pushw	x
+      000128 4B 00            [ 1]  284 	push	#0x00
+      00012A 90 89            [ 2]  285 	pushw	y
+      00012C CDr00r00         [ 4]  286 	call	_assert_failed
+      00012F 5B 06            [ 2]  287 	addw	sp, #6
+      000131                        288 00107$:
+                                    289 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 218: if (NewState != DISABLE )
+      000131 0D 03            [ 1]  290 	tnz	(0x03, sp)
+      000133 27 09            [ 1]  291 	jreq	00102$
+                                    292 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 221: CLK->SWCR |= CLK_SWCR_SWEN;
+      000135 AE 50 C5         [ 2]  293 	ldw	x, #0x50c5
+      000138 F6               [ 1]  294 	ld	a, (x)
+      000139 AA 02            [ 1]  295 	or	a, #0x02
+      00013B F7               [ 1]  296 	ld	(x), a
+      00013C 20 07            [ 2]  297 	jra	00104$
+      00013E                        298 00102$:
+                                    299 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 226: CLK->SWCR &= (uint8_t)(~CLK_SWCR_SWEN);
+      00013E AE 50 C5         [ 2]  300 	ldw	x, #0x50c5
+      000141 F6               [ 1]  301 	ld	a, (x)
+      000142 A4 FD            [ 1]  302 	and	a, #0xfd
+      000144 F7               [ 1]  303 	ld	(x), a
+      000145                        304 00104$:
+      000145 81               [ 4]  305 	ret
+                                    306 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 238: void CLK_SlowActiveHaltWakeUpCmd(FunctionalState NewState)
+                                    307 ;	-----------------------------------------
+                                    308 ;	 function CLK_SlowActiveHaltWakeUpCmd
+                                    309 ;	-----------------------------------------
+      000146                        310 _CLK_SlowActiveHaltWakeUpCmd:
+                                    311 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 241: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      000146 0D 03            [ 1]  312 	tnz	(0x03, sp)
+      000148 27 17            [ 1]  313 	jreq	00107$
+      00014A 7B 03            [ 1]  314 	ld	a, (0x03, sp)
+      00014C A1 01            [ 1]  315 	cp	a, #0x01
+      00014E 27 11            [ 1]  316 	jreq	00107$
+      000150 90 AEr07r75      [ 2]  317 	ldw	y, #___str_0+0
+      000154 4B F1            [ 1]  318 	push	#0xf1
+      000156 5F               [ 1]  319 	clrw	x
+      000157 89               [ 2]  320 	pushw	x
+      000158 4B 00            [ 1]  321 	push	#0x00
+      00015A 90 89            [ 2]  322 	pushw	y
+      00015C CDr00r00         [ 4]  323 	call	_assert_failed
+      00015F 5B 06            [ 2]  324 	addw	sp, #6
+      000161                        325 00107$:
+                                    326 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 243: if (NewState != DISABLE)
+      000161 0D 03            [ 1]  327 	tnz	(0x03, sp)
+      000163 27 09            [ 1]  328 	jreq	00102$
+                                    329 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 246: CLK->ICKR |= CLK_ICKR_SWUAH;
+      000165 AE 50 C0         [ 2]  330 	ldw	x, #0x50c0
+      000168 F6               [ 1]  331 	ld	a, (x)
+      000169 AA 20            [ 1]  332 	or	a, #0x20
+      00016B F7               [ 1]  333 	ld	(x), a
+      00016C 20 07            [ 2]  334 	jra	00104$
+      00016E                        335 00102$:
+                                    336 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 251: CLK->ICKR &= (uint8_t)(~CLK_ICKR_SWUAH);
+      00016E AE 50 C0         [ 2]  337 	ldw	x, #0x50c0
+      000171 F6               [ 1]  338 	ld	a, (x)
+      000172 A4 DF            [ 1]  339 	and	a, #0xdf
+      000174 F7               [ 1]  340 	ld	(x), a
+      000175                        341 00104$:
+      000175 81               [ 4]  342 	ret
+                                    343 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 263: void CLK_PeripheralClockConfig(CLK_Peripheral_TypeDef CLK_Peripheral, FunctionalState NewState)
+                                    344 ;	-----------------------------------------
+                                    345 ;	 function CLK_PeripheralClockConfig
+                                    346 ;	-----------------------------------------
+      000176                        347 _CLK_PeripheralClockConfig:
+      000176 89               [ 2]  348 	pushw	x
+                                    349 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 266: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      000177 0D 06            [ 1]  350 	tnz	(0x06, sp)
+      000179 27 17            [ 1]  351 	jreq	00113$
+      00017B 7B 06            [ 1]  352 	ld	a, (0x06, sp)
+      00017D A1 01            [ 1]  353 	cp	a, #0x01
+      00017F 27 11            [ 1]  354 	jreq	00113$
+      000181 90 AEr07r75      [ 2]  355 	ldw	y, #___str_0+0
+      000185 4B 0A            [ 1]  356 	push	#0x0a
+      000187 4B 01            [ 1]  357 	push	#0x01
+      000189 5F               [ 1]  358 	clrw	x
+      00018A 89               [ 2]  359 	pushw	x
+      00018B 90 89            [ 2]  360 	pushw	y
+      00018D CDr00r00         [ 4]  361 	call	_assert_failed
+      000190 5B 06            [ 2]  362 	addw	sp, #6
+      000192                        363 00113$:
+                                    364 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 267: assert_param(IS_CLK_PERIPHERAL_OK(CLK_Peripheral));
+      000192 0D 05            [ 1]  365 	tnz	(0x05, sp)
+      000194 27 6D            [ 1]  366 	jreq	00118$
+      000196 7B 05            [ 1]  367 	ld	a, (0x05, sp)
+      000198 A1 01            [ 1]  368 	cp	a, #0x01
+      00019A 27 67            [ 1]  369 	jreq	00118$
+      00019C 7B 05            [ 1]  370 	ld	a, (0x05, sp)
+      00019E A1 03            [ 1]  371 	cp	a, #0x03
+      0001A0 26 03            [ 1]  372 	jrne	00243$
+      0001A2 A6 01            [ 1]  373 	ld	a, #0x01
+      0001A4 21                     374 	.byte 0x21
+      0001A5                        375 00243$:
+      0001A5 4F               [ 1]  376 	clr	a
+      0001A6                        377 00244$:
+      0001A6 4D               [ 1]  378 	tnz	a
+      0001A7 26 5A            [ 1]  379 	jrne	00118$
+      0001A9 4D               [ 1]  380 	tnz	a
+      0001AA 26 57            [ 1]  381 	jrne	00118$
+      0001AC 4D               [ 1]  382 	tnz	a
+      0001AD 26 54            [ 1]  383 	jrne	00118$
+      0001AF 7B 05            [ 1]  384 	ld	a, (0x05, sp)
+      0001B1 A1 04            [ 1]  385 	cp	a, #0x04
+      0001B3 26 05            [ 1]  386 	jrne	00249$
+      0001B5 A6 01            [ 1]  387 	ld	a, #0x01
+      0001B7 95               [ 1]  388 	ld	xh, a
+      0001B8 20 02            [ 2]  389 	jra	00250$
+      0001BA                        390 00249$:
+      0001BA 4F               [ 1]  391 	clr	a
+      0001BB 95               [ 1]  392 	ld	xh, a
+      0001BC                        393 00250$:
+      0001BC 9E               [ 1]  394 	ld	a, xh
+      0001BD 4D               [ 1]  395 	tnz	a
+      0001BE 26 43            [ 1]  396 	jrne	00118$
+      0001C0 7B 05            [ 1]  397 	ld	a, (0x05, sp)
+      0001C2 A1 05            [ 1]  398 	cp	a, #0x05
+      0001C4 26 03            [ 1]  399 	jrne	00253$
+      0001C6 A6 01            [ 1]  400 	ld	a, #0x01
+      0001C8 21                     401 	.byte 0x21
+      0001C9                        402 00253$:
+      0001C9 4F               [ 1]  403 	clr	a
+      0001CA                        404 00254$:
+      0001CA 4D               [ 1]  405 	tnz	a
+      0001CB 26 36            [ 1]  406 	jrne	00118$
+      0001CD 4D               [ 1]  407 	tnz	a
+      0001CE 26 33            [ 1]  408 	jrne	00118$
+      0001D0 9E               [ 1]  409 	ld	a, xh
+      0001D1 4D               [ 1]  410 	tnz	a
+      0001D2 26 2F            [ 1]  411 	jrne	00118$
+      0001D4 7B 05            [ 1]  412 	ld	a, (0x05, sp)
+      0001D6 A1 06            [ 1]  413 	cp	a, #0x06
+      0001D8 27 29            [ 1]  414 	jreq	00118$
+      0001DA 7B 05            [ 1]  415 	ld	a, (0x05, sp)
+      0001DC A1 07            [ 1]  416 	cp	a, #0x07
+      0001DE 27 23            [ 1]  417 	jreq	00118$
+      0001E0 7B 05            [ 1]  418 	ld	a, (0x05, sp)
+      0001E2 A1 17            [ 1]  419 	cp	a, #0x17
+      0001E4 27 1D            [ 1]  420 	jreq	00118$
+      0001E6 7B 05            [ 1]  421 	ld	a, (0x05, sp)
+      0001E8 A1 13            [ 1]  422 	cp	a, #0x13
+      0001EA 27 17            [ 1]  423 	jreq	00118$
+      0001EC 7B 05            [ 1]  424 	ld	a, (0x05, sp)
+      0001EE A1 12            [ 1]  425 	cp	a, #0x12
+      0001F0 27 11            [ 1]  426 	jreq	00118$
+      0001F2 90 AEr07r75      [ 2]  427 	ldw	y, #___str_0+0
+      0001F6 4B 0B            [ 1]  428 	push	#0x0b
+      0001F8 4B 01            [ 1]  429 	push	#0x01
+      0001FA 5F               [ 1]  430 	clrw	x
+      0001FB 89               [ 2]  431 	pushw	x
+      0001FC 90 89            [ 2]  432 	pushw	y
+      0001FE CDr00r00         [ 4]  433 	call	_assert_failed
+      000201 5B 06            [ 2]  434 	addw	sp, #6
+      000203                        435 00118$:
+                                    436 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 274: CLK->PCKENR1 |= (uint8_t)((uint8_t)1 << ((uint8_t)CLK_Peripheral & (uint8_t)0x0F));
+      000203 7B 05            [ 1]  437 	ld	a, (0x05, sp)
+      000205 A4 0F            [ 1]  438 	and	a, #0x0f
+      000207 95               [ 1]  439 	ld	xh, a
+      000208 A6 01            [ 1]  440 	ld	a, #0x01
+      00020A 6B 02            [ 1]  441 	ld	(0x02, sp), a
+      00020C 9E               [ 1]  442 	ld	a, xh
+      00020D 4D               [ 1]  443 	tnz	a
+      00020E 27 05            [ 1]  444 	jreq	00274$
+      000210                        445 00273$:
+      000210 08 02            [ 1]  446 	sll	(0x02, sp)
+      000212 4A               [ 1]  447 	dec	a
+      000213 26 FB            [ 1]  448 	jrne	00273$
+      000215                        449 00274$:
+                                    450 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 279: CLK->PCKENR1 &= (uint8_t)(~(uint8_t)(((uint8_t)1 << ((uint8_t)CLK_Peripheral & (uint8_t)0x0F))));
+      000215 7B 02            [ 1]  451 	ld	a, (0x02, sp)
+      000217 43               [ 1]  452 	cpl	a
+      000218 6B 01            [ 1]  453 	ld	(0x01, sp), a
+                                    454 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 269: if (((uint8_t)CLK_Peripheral & (uint8_t)0x10) == 0x00)
+      00021A 7B 05            [ 1]  455 	ld	a, (0x05, sp)
+      00021C A5 10            [ 1]  456 	bcp	a, #0x10
+      00021E 26 1C            [ 1]  457 	jrne	00108$
+                                    458 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 271: if (NewState != DISABLE)
+      000220 0D 06            [ 1]  459 	tnz	(0x06, sp)
+      000222 27 0C            [ 1]  460 	jreq	00102$
+                                    461 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 274: CLK->PCKENR1 |= (uint8_t)((uint8_t)1 << ((uint8_t)CLK_Peripheral & (uint8_t)0x0F));
+      000224 AE 50 C7         [ 2]  462 	ldw	x, #0x50c7
+      000227 F6               [ 1]  463 	ld	a, (x)
+      000228 1A 02            [ 1]  464 	or	a, (0x02, sp)
+      00022A AE 50 C7         [ 2]  465 	ldw	x, #0x50c7
+      00022D F7               [ 1]  466 	ld	(x), a
+      00022E 20 26            [ 2]  467 	jra	00110$
+      000230                        468 00102$:
+                                    469 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 279: CLK->PCKENR1 &= (uint8_t)(~(uint8_t)(((uint8_t)1 << ((uint8_t)CLK_Peripheral & (uint8_t)0x0F))));
+      000230 AE 50 C7         [ 2]  470 	ldw	x, #0x50c7
+      000233 F6               [ 1]  471 	ld	a, (x)
+      000234 14 01            [ 1]  472 	and	a, (0x01, sp)
+      000236 AE 50 C7         [ 2]  473 	ldw	x, #0x50c7
+      000239 F7               [ 1]  474 	ld	(x), a
+      00023A 20 1A            [ 2]  475 	jra	00110$
+      00023C                        476 00108$:
+                                    477 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 284: if (NewState != DISABLE)
+      00023C 0D 06            [ 1]  478 	tnz	(0x06, sp)
+      00023E 27 0C            [ 1]  479 	jreq	00105$
+                                    480 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 287: CLK->PCKENR2 |= (uint8_t)((uint8_t)1 << ((uint8_t)CLK_Peripheral & (uint8_t)0x0F));
+      000240 AE 50 CA         [ 2]  481 	ldw	x, #0x50ca
+      000243 F6               [ 1]  482 	ld	a, (x)
+      000244 1A 02            [ 1]  483 	or	a, (0x02, sp)
+      000246 AE 50 CA         [ 2]  484 	ldw	x, #0x50ca
+      000249 F7               [ 1]  485 	ld	(x), a
+      00024A 20 0A            [ 2]  486 	jra	00110$
+      00024C                        487 00105$:
+                                    488 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 292: CLK->PCKENR2 &= (uint8_t)(~(uint8_t)(((uint8_t)1 << ((uint8_t)CLK_Peripheral & (uint8_t)0x0F))));
+      00024C AE 50 CA         [ 2]  489 	ldw	x, #0x50ca
+      00024F F6               [ 1]  490 	ld	a, (x)
+      000250 14 01            [ 1]  491 	and	a, (0x01, sp)
+      000252 AE 50 CA         [ 2]  492 	ldw	x, #0x50ca
+      000255 F7               [ 1]  493 	ld	(x), a
+      000256                        494 00110$:
+      000256 85               [ 2]  495 	popw	x
+      000257 81               [ 4]  496 	ret
+                                    497 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 309: ErrorStatus CLK_ClockSwitchConfig(CLK_SwitchMode_TypeDef CLK_SwitchMode, CLK_Source_TypeDef CLK_NewClock, FunctionalState ITState, CLK_CurrentClockState_TypeDef CLK_CurrentClockState)
+                                    498 ;	-----------------------------------------
+                                    499 ;	 function CLK_ClockSwitchConfig
+                                    500 ;	-----------------------------------------
+      000258                        501 _CLK_ClockSwitchConfig:
+      000258 52 03            [ 2]  502 	sub	sp, #3
+                                    503 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 316: assert_param(IS_CLK_SOURCE_OK(CLK_NewClock));
+      00025A 7B 07            [ 1]  504 	ld	a, (0x07, sp)
+      00025C A1 E1            [ 1]  505 	cp	a, #0xe1
+      00025E 27 1D            [ 1]  506 	jreq	00140$
+      000260 7B 07            [ 1]  507 	ld	a, (0x07, sp)
+      000262 A1 D2            [ 1]  508 	cp	a, #0xd2
+      000264 27 17            [ 1]  509 	jreq	00140$
+      000266 7B 07            [ 1]  510 	ld	a, (0x07, sp)
+      000268 A1 B4            [ 1]  511 	cp	a, #0xb4
+      00026A 27 11            [ 1]  512 	jreq	00140$
+      00026C 90 AEr07r75      [ 2]  513 	ldw	y, #___str_0+0
+      000270 4B 3C            [ 1]  514 	push	#0x3c
+      000272 4B 01            [ 1]  515 	push	#0x01
+      000274 5F               [ 1]  516 	clrw	x
+      000275 89               [ 2]  517 	pushw	x
+      000276 90 89            [ 2]  518 	pushw	y
+      000278 CDr00r00         [ 4]  519 	call	_assert_failed
+      00027B 5B 06            [ 2]  520 	addw	sp, #6
+      00027D                        521 00140$:
+                                    522 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 317: assert_param(IS_CLK_SWITCHMODE_OK(CLK_SwitchMode));
+      00027D 7B 06            [ 1]  523 	ld	a, (0x06, sp)
+      00027F A1 01            [ 1]  524 	cp	a, #0x01
+      000281 26 06            [ 1]  525 	jrne	00282$
+      000283 A6 01            [ 1]  526 	ld	a, #0x01
+      000285 6B 03            [ 1]  527 	ld	(0x03, sp), a
+      000287 20 02            [ 2]  528 	jra	00283$
+      000289                        529 00282$:
+      000289 0F 03            [ 1]  530 	clr	(0x03, sp)
+      00028B                        531 00283$:
+      00028B 0D 06            [ 1]  532 	tnz	(0x06, sp)
+      00028D 27 15            [ 1]  533 	jreq	00148$
+      00028F 0D 03            [ 1]  534 	tnz	(0x03, sp)
+      000291 26 11            [ 1]  535 	jrne	00148$
+      000293 90 AEr07r75      [ 2]  536 	ldw	y, #___str_0+0
+      000297 4B 3D            [ 1]  537 	push	#0x3d
+      000299 4B 01            [ 1]  538 	push	#0x01
+      00029B 5F               [ 1]  539 	clrw	x
+      00029C 89               [ 2]  540 	pushw	x
+      00029D 90 89            [ 2]  541 	pushw	y
+      00029F CDr00r00         [ 4]  542 	call	_assert_failed
+      0002A2 5B 06            [ 2]  543 	addw	sp, #6
+      0002A4                        544 00148$:
+                                    545 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 318: assert_param(IS_FUNCTIONALSTATE_OK(ITState));
+      0002A4 0D 08            [ 1]  546 	tnz	(0x08, sp)
+      0002A6 27 17            [ 1]  547 	jreq	00153$
+      0002A8 7B 08            [ 1]  548 	ld	a, (0x08, sp)
+      0002AA A1 01            [ 1]  549 	cp	a, #0x01
+      0002AC 27 11            [ 1]  550 	jreq	00153$
+      0002AE 90 AEr07r75      [ 2]  551 	ldw	y, #___str_0+0
+      0002B2 4B 3E            [ 1]  552 	push	#0x3e
+      0002B4 4B 01            [ 1]  553 	push	#0x01
+      0002B6 5F               [ 1]  554 	clrw	x
+      0002B7 89               [ 2]  555 	pushw	x
+      0002B8 90 89            [ 2]  556 	pushw	y
+      0002BA CDr00r00         [ 4]  557 	call	_assert_failed
+      0002BD 5B 06            [ 2]  558 	addw	sp, #6
+      0002BF                        559 00153$:
+                                    560 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 319: assert_param(IS_CLK_CURRENTCLOCKSTATE_OK(CLK_CurrentClockState));
+      0002BF 0D 09            [ 1]  561 	tnz	(0x09, sp)
+      0002C1 27 17            [ 1]  562 	jreq	00158$
+      0002C3 7B 09            [ 1]  563 	ld	a, (0x09, sp)
+      0002C5 A1 01            [ 1]  564 	cp	a, #0x01
+      0002C7 27 11            [ 1]  565 	jreq	00158$
+      0002C9 90 AEr07r75      [ 2]  566 	ldw	y, #___str_0+0
+      0002CD 4B 3F            [ 1]  567 	push	#0x3f
+      0002CF 4B 01            [ 1]  568 	push	#0x01
+      0002D1 5F               [ 1]  569 	clrw	x
+      0002D2 89               [ 2]  570 	pushw	x
+      0002D3 90 89            [ 2]  571 	pushw	y
+      0002D5 CDr00r00         [ 4]  572 	call	_assert_failed
+      0002D8 5B 06            [ 2]  573 	addw	sp, #6
+      0002DA                        574 00158$:
+                                    575 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 322: clock_master = (CLK_Source_TypeDef)CLK->CMSR;
+      0002DA AE 50 C3         [ 2]  576 	ldw	x, #0x50c3
+      0002DD F6               [ 1]  577 	ld	a, (x)
+      0002DE 6B 02            [ 1]  578 	ld	(0x02, sp), a
+                                    579 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 325: if (CLK_SwitchMode == CLK_SWITCHMODE_AUTO)
+      0002E0 0D 03            [ 1]  580 	tnz	(0x03, sp)
+      0002E2 27 40            [ 1]  581 	jreq	00122$
+                                    582 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 328: CLK->SWCR |= CLK_SWCR_SWEN;
+      0002E4 AE 50 C5         [ 2]  583 	ldw	x, #0x50c5
+      0002E7 F6               [ 1]  584 	ld	a, (x)
+      0002E8 AA 02            [ 1]  585 	or	a, #0x02
+      0002EA F7               [ 1]  586 	ld	(x), a
+                                    587 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 331: if (ITState != DISABLE)
+      0002EB 0D 08            [ 1]  588 	tnz	(0x08, sp)
+      0002ED 27 09            [ 1]  589 	jreq	00102$
+                                    590 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 333: CLK->SWCR |= CLK_SWCR_SWIEN;
+      0002EF AE 50 C5         [ 2]  591 	ldw	x, #0x50c5
+      0002F2 F6               [ 1]  592 	ld	a, (x)
+      0002F3 AA 04            [ 1]  593 	or	a, #0x04
+      0002F5 F7               [ 1]  594 	ld	(x), a
+      0002F6 20 07            [ 2]  595 	jra	00103$
+      0002F8                        596 00102$:
+                                    597 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 337: CLK->SWCR &= (uint8_t)(~CLK_SWCR_SWIEN);
+      0002F8 AE 50 C5         [ 2]  598 	ldw	x, #0x50c5
+      0002FB F6               [ 1]  599 	ld	a, (x)
+      0002FC A4 FB            [ 1]  600 	and	a, #0xfb
+      0002FE F7               [ 1]  601 	ld	(x), a
+      0002FF                        602 00103$:
+                                    603 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 341: CLK->SWR = (uint8_t)CLK_NewClock;
+      0002FF AE 50 C4         [ 2]  604 	ldw	x, #0x50c4
+      000302 7B 07            [ 1]  605 	ld	a, (0x07, sp)
+      000304 F7               [ 1]  606 	ld	(x), a
+                                    607 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 344: while((((CLK->SWCR & CLK_SWCR_SWBSY) != 0 )&& (DownCounter != 0)))
+      000305 AE FF FF         [ 2]  608 	ldw	x, #0xffff
+      000308                        609 00105$:
+      000308 90 AE 50 C5      [ 2]  610 	ldw	y, #0x50c5
+      00030C 90 F6            [ 1]  611 	ld	a, (y)
+      00030E 44               [ 1]  612 	srl	a
+      00030F 24 06            [ 1]  613 	jrnc	00107$
+      000311 5D               [ 2]  614 	tnzw	x
+      000312 27 03            [ 1]  615 	jreq	00107$
+                                    616 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 346: DownCounter--;
+      000314 5A               [ 2]  617 	decw	x
+      000315 20 F1            [ 2]  618 	jra	00105$
+      000317                        619 00107$:
+                                    620 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 349: if(DownCounter != 0)
+      000317 5D               [ 2]  621 	tnzw	x
+      000318 27 06            [ 1]  622 	jreq	00109$
+                                    623 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 351: Swif = SUCCESS;
+      00031A A6 01            [ 1]  624 	ld	a, #0x01
+      00031C 6B 01            [ 1]  625 	ld	(0x01, sp), a
+      00031E 20 43            [ 2]  626 	jra	00123$
+      000320                        627 00109$:
+                                    628 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 355: Swif = ERROR;
+      000320 0F 01            [ 1]  629 	clr	(0x01, sp)
+      000322 20 3F            [ 2]  630 	jra	00123$
+      000324                        631 00122$:
+                                    632 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 361: if (ITState != DISABLE)
+      000324 0D 08            [ 1]  633 	tnz	(0x08, sp)
+      000326 27 09            [ 1]  634 	jreq	00112$
+                                    635 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 363: CLK->SWCR |= CLK_SWCR_SWIEN;
+      000328 AE 50 C5         [ 2]  636 	ldw	x, #0x50c5
+      00032B F6               [ 1]  637 	ld	a, (x)
+      00032C AA 04            [ 1]  638 	or	a, #0x04
+      00032E F7               [ 1]  639 	ld	(x), a
+      00032F 20 07            [ 2]  640 	jra	00113$
+      000331                        641 00112$:
+                                    642 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 367: CLK->SWCR &= (uint8_t)(~CLK_SWCR_SWIEN);
+      000331 AE 50 C5         [ 2]  643 	ldw	x, #0x50c5
+      000334 F6               [ 1]  644 	ld	a, (x)
+      000335 A4 FB            [ 1]  645 	and	a, #0xfb
+      000337 F7               [ 1]  646 	ld	(x), a
+      000338                        647 00113$:
+                                    648 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 371: CLK->SWR = (uint8_t)CLK_NewClock;
+      000338 AE 50 C4         [ 2]  649 	ldw	x, #0x50c4
+      00033B 7B 07            [ 1]  650 	ld	a, (0x07, sp)
+      00033D F7               [ 1]  651 	ld	(x), a
+                                    652 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 374: while((((CLK->SWCR & CLK_SWCR_SWIF) != 0 ) && (DownCounter != 0)))
+      00033E AE FF FF         [ 2]  653 	ldw	x, #0xffff
+      000341                        654 00115$:
+      000341 90 AE 50 C5      [ 2]  655 	ldw	y, #0x50c5
+      000345 90 F6            [ 1]  656 	ld	a, (y)
+      000347 A5 08            [ 1]  657 	bcp	a, #0x08
+      000349 27 06            [ 1]  658 	jreq	00117$
+      00034B 5D               [ 2]  659 	tnzw	x
+      00034C 27 03            [ 1]  660 	jreq	00117$
+                                    661 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 376: DownCounter--;
+      00034E 5A               [ 2]  662 	decw	x
+      00034F 20 F0            [ 2]  663 	jra	00115$
+      000351                        664 00117$:
+                                    665 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 379: if(DownCounter != 0)
+      000351 5D               [ 2]  666 	tnzw	x
+      000352 27 0D            [ 1]  667 	jreq	00119$
+                                    668 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 382: CLK->SWCR |= CLK_SWCR_SWEN;
+      000354 AE 50 C5         [ 2]  669 	ldw	x, #0x50c5
+      000357 F6               [ 1]  670 	ld	a, (x)
+      000358 AA 02            [ 1]  671 	or	a, #0x02
+      00035A F7               [ 1]  672 	ld	(x), a
+                                    673 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 383: Swif = SUCCESS;
+      00035B A6 01            [ 1]  674 	ld	a, #0x01
+      00035D 6B 01            [ 1]  675 	ld	(0x01, sp), a
+      00035F 20 02            [ 2]  676 	jra	00123$
+      000361                        677 00119$:
+                                    678 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 387: Swif = ERROR;
+      000361 0F 01            [ 1]  679 	clr	(0x01, sp)
+      000363                        680 00123$:
+                                    681 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 390: if(Swif != ERROR)
+      000363 0D 01            [ 1]  682 	tnz	(0x01, sp)
+      000365 27 37            [ 1]  683 	jreq	00136$
+                                    684 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 393: if((CLK_CurrentClockState == CLK_CURRENTCLOCKSTATE_DISABLE) && ( clock_master == CLK_SOURCE_HSI))
+      000367 0D 09            [ 1]  685 	tnz	(0x09, sp)
+      000369 26 0F            [ 1]  686 	jrne	00132$
+      00036B 7B 02            [ 1]  687 	ld	a, (0x02, sp)
+      00036D A1 E1            [ 1]  688 	cp	a, #0xe1
+      00036F 26 09            [ 1]  689 	jrne	00132$
+                                    690 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 395: CLK->ICKR &= (uint8_t)(~CLK_ICKR_HSIEN);
+      000371 AE 50 C0         [ 2]  691 	ldw	x, #0x50c0
+      000374 F6               [ 1]  692 	ld	a, (x)
+      000375 A4 FE            [ 1]  693 	and	a, #0xfe
+      000377 F7               [ 1]  694 	ld	(x), a
+      000378 20 24            [ 2]  695 	jra	00136$
+      00037A                        696 00132$:
+                                    697 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 397: else if((CLK_CurrentClockState == CLK_CURRENTCLOCKSTATE_DISABLE) && ( clock_master == CLK_SOURCE_LSI))
+      00037A 0D 09            [ 1]  698 	tnz	(0x09, sp)
+      00037C 26 0F            [ 1]  699 	jrne	00128$
+      00037E 7B 02            [ 1]  700 	ld	a, (0x02, sp)
+      000380 A1 D2            [ 1]  701 	cp	a, #0xd2
+      000382 26 09            [ 1]  702 	jrne	00128$
+                                    703 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 399: CLK->ICKR &= (uint8_t)(~CLK_ICKR_LSIEN);
+      000384 AE 50 C0         [ 2]  704 	ldw	x, #0x50c0
+      000387 F6               [ 1]  705 	ld	a, (x)
+      000388 A4 F7            [ 1]  706 	and	a, #0xf7
+      00038A F7               [ 1]  707 	ld	(x), a
+      00038B 20 11            [ 2]  708 	jra	00136$
+      00038D                        709 00128$:
+                                    710 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 401: else if ((CLK_CurrentClockState == CLK_CURRENTCLOCKSTATE_DISABLE) && ( clock_master == CLK_SOURCE_HSE))
+      00038D 0D 09            [ 1]  711 	tnz	(0x09, sp)
+      00038F 26 0D            [ 1]  712 	jrne	00136$
+      000391 7B 02            [ 1]  713 	ld	a, (0x02, sp)
+      000393 A1 B4            [ 1]  714 	cp	a, #0xb4
+      000395 26 07            [ 1]  715 	jrne	00136$
+                                    716 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 403: CLK->ECKR &= (uint8_t)(~CLK_ECKR_HSEEN);
+      000397 AE 50 C1         [ 2]  717 	ldw	x, #0x50c1
+      00039A F6               [ 1]  718 	ld	a, (x)
+      00039B A4 FE            [ 1]  719 	and	a, #0xfe
+      00039D F7               [ 1]  720 	ld	(x), a
+      00039E                        721 00136$:
+                                    722 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 406: return(Swif);
+      00039E 7B 01            [ 1]  723 	ld	a, (0x01, sp)
+      0003A0 5B 03            [ 2]  724 	addw	sp, #3
+      0003A2 81               [ 4]  725 	ret
+                                    726 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 415: void CLK_HSIPrescalerConfig(CLK_Prescaler_TypeDef HSIPrescaler)
+                                    727 ;	-----------------------------------------
+                                    728 ;	 function CLK_HSIPrescalerConfig
+                                    729 ;	-----------------------------------------
+      0003A3                        730 _CLK_HSIPrescalerConfig:
+                                    731 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 418: assert_param(IS_CLK_HSIPRESCALER_OK(HSIPrescaler));
+      0003A3 0D 03            [ 1]  732 	tnz	(0x03, sp)
+      0003A5 27 23            [ 1]  733 	jreq	00104$
+      0003A7 7B 03            [ 1]  734 	ld	a, (0x03, sp)
+      0003A9 A1 08            [ 1]  735 	cp	a, #0x08
+      0003AB 27 1D            [ 1]  736 	jreq	00104$
+      0003AD 7B 03            [ 1]  737 	ld	a, (0x03, sp)
+      0003AF A1 10            [ 1]  738 	cp	a, #0x10
+      0003B1 27 17            [ 1]  739 	jreq	00104$
+      0003B3 7B 03            [ 1]  740 	ld	a, (0x03, sp)
+      0003B5 A1 18            [ 1]  741 	cp	a, #0x18
+      0003B7 27 11            [ 1]  742 	jreq	00104$
+      0003B9 90 AEr07r75      [ 2]  743 	ldw	y, #___str_0+0
+      0003BD 4B A2            [ 1]  744 	push	#0xa2
+      0003BF 4B 01            [ 1]  745 	push	#0x01
+      0003C1 5F               [ 1]  746 	clrw	x
+      0003C2 89               [ 2]  747 	pushw	x
+      0003C3 90 89            [ 2]  748 	pushw	y
+      0003C5 CDr00r00         [ 4]  749 	call	_assert_failed
+      0003C8 5B 06            [ 2]  750 	addw	sp, #6
+      0003CA                        751 00104$:
+                                    752 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 421: CLK->CKDIVR &= (uint8_t)(~CLK_CKDIVR_HSIDIV);
+      0003CA AE 50 C6         [ 2]  753 	ldw	x, #0x50c6
+      0003CD F6               [ 1]  754 	ld	a, (x)
+      0003CE A4 E7            [ 1]  755 	and	a, #0xe7
+      0003D0 F7               [ 1]  756 	ld	(x), a
+                                    757 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 424: CLK->CKDIVR |= (uint8_t)HSIPrescaler;
+      0003D1 AE 50 C6         [ 2]  758 	ldw	x, #0x50c6
+      0003D4 F6               [ 1]  759 	ld	a, (x)
+      0003D5 1A 03            [ 1]  760 	or	a, (0x03, sp)
+      0003D7 AE 50 C6         [ 2]  761 	ldw	x, #0x50c6
+      0003DA F7               [ 1]  762 	ld	(x), a
+      0003DB 81               [ 4]  763 	ret
+                                    764 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 436: void CLK_CCOConfig(CLK_Output_TypeDef CLK_CCO)
+                                    765 ;	-----------------------------------------
+                                    766 ;	 function CLK_CCOConfig
+                                    767 ;	-----------------------------------------
+      0003DC                        768 _CLK_CCOConfig:
+                                    769 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 439: assert_param(IS_CLK_OUTPUT_OK(CLK_CCO));
+      0003DC 0D 03            [ 1]  770 	tnz	(0x03, sp)
+      0003DE 27 59            [ 1]  771 	jreq	00104$
+      0003E0 7B 03            [ 1]  772 	ld	a, (0x03, sp)
+      0003E2 A1 04            [ 1]  773 	cp	a, #0x04
+      0003E4 27 53            [ 1]  774 	jreq	00104$
+      0003E6 7B 03            [ 1]  775 	ld	a, (0x03, sp)
+      0003E8 A1 02            [ 1]  776 	cp	a, #0x02
+      0003EA 27 4D            [ 1]  777 	jreq	00104$
+      0003EC 7B 03            [ 1]  778 	ld	a, (0x03, sp)
+      0003EE A1 08            [ 1]  779 	cp	a, #0x08
+      0003F0 27 47            [ 1]  780 	jreq	00104$
+      0003F2 7B 03            [ 1]  781 	ld	a, (0x03, sp)
+      0003F4 A1 0A            [ 1]  782 	cp	a, #0x0a
+      0003F6 27 41            [ 1]  783 	jreq	00104$
+      0003F8 7B 03            [ 1]  784 	ld	a, (0x03, sp)
+      0003FA A1 0C            [ 1]  785 	cp	a, #0x0c
+      0003FC 27 3B            [ 1]  786 	jreq	00104$
+      0003FE 7B 03            [ 1]  787 	ld	a, (0x03, sp)
+      000400 A1 0E            [ 1]  788 	cp	a, #0x0e
+      000402 27 35            [ 1]  789 	jreq	00104$
+      000404 7B 03            [ 1]  790 	ld	a, (0x03, sp)
+      000406 A1 10            [ 1]  791 	cp	a, #0x10
+      000408 27 2F            [ 1]  792 	jreq	00104$
+      00040A 7B 03            [ 1]  793 	ld	a, (0x03, sp)
+      00040C A1 12            [ 1]  794 	cp	a, #0x12
+      00040E 27 29            [ 1]  795 	jreq	00104$
+      000410 7B 03            [ 1]  796 	ld	a, (0x03, sp)
+      000412 A1 14            [ 1]  797 	cp	a, #0x14
+      000414 27 23            [ 1]  798 	jreq	00104$
+      000416 7B 03            [ 1]  799 	ld	a, (0x03, sp)
+      000418 A1 16            [ 1]  800 	cp	a, #0x16
+      00041A 27 1D            [ 1]  801 	jreq	00104$
+      00041C 7B 03            [ 1]  802 	ld	a, (0x03, sp)
+      00041E A1 18            [ 1]  803 	cp	a, #0x18
+      000420 27 17            [ 1]  804 	jreq	00104$
+      000422 7B 03            [ 1]  805 	ld	a, (0x03, sp)
+      000424 A1 1A            [ 1]  806 	cp	a, #0x1a
+      000426 27 11            [ 1]  807 	jreq	00104$
+      000428 90 AEr07r75      [ 2]  808 	ldw	y, #___str_0+0
+      00042C 4B B7            [ 1]  809 	push	#0xb7
+      00042E 4B 01            [ 1]  810 	push	#0x01
+      000430 5F               [ 1]  811 	clrw	x
+      000431 89               [ 2]  812 	pushw	x
+      000432 90 89            [ 2]  813 	pushw	y
+      000434 CDr00r00         [ 4]  814 	call	_assert_failed
+      000437 5B 06            [ 2]  815 	addw	sp, #6
+      000439                        816 00104$:
+                                    817 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 442: CLK->CCOR &= (uint8_t)(~CLK_CCOR_CCOSEL);
+      000439 AE 50 C9         [ 2]  818 	ldw	x, #0x50c9
+      00043C F6               [ 1]  819 	ld	a, (x)
+      00043D A4 E1            [ 1]  820 	and	a, #0xe1
+      00043F F7               [ 1]  821 	ld	(x), a
+                                    822 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 445: CLK->CCOR |= (uint8_t)CLK_CCO;
+      000440 AE 50 C9         [ 2]  823 	ldw	x, #0x50c9
+      000443 F6               [ 1]  824 	ld	a, (x)
+      000444 1A 03            [ 1]  825 	or	a, (0x03, sp)
+      000446 AE 50 C9         [ 2]  826 	ldw	x, #0x50c9
+      000449 F7               [ 1]  827 	ld	(x), a
+                                    828 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 448: CLK->CCOR |= CLK_CCOR_CCOEN;
+      00044A 72 10 50 C9      [ 1]  829 	bset	0x50c9, #0
+      00044E 81               [ 4]  830 	ret
+                                    831 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 459: void CLK_ITConfig(CLK_IT_TypeDef CLK_IT, FunctionalState NewState)
+                                    832 ;	-----------------------------------------
+                                    833 ;	 function CLK_ITConfig
+                                    834 ;	-----------------------------------------
+      00044F                        835 _CLK_ITConfig:
+      00044F 89               [ 2]  836 	pushw	x
+                                    837 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 462: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      000450 0D 06            [ 1]  838 	tnz	(0x06, sp)
+      000452 27 17            [ 1]  839 	jreq	00115$
+      000454 7B 06            [ 1]  840 	ld	a, (0x06, sp)
+      000456 A1 01            [ 1]  841 	cp	a, #0x01
+      000458 27 11            [ 1]  842 	jreq	00115$
+      00045A 90 AEr07r75      [ 2]  843 	ldw	y, #___str_0+0
+      00045E 4B CE            [ 1]  844 	push	#0xce
+      000460 4B 01            [ 1]  845 	push	#0x01
+      000462 5F               [ 1]  846 	clrw	x
+      000463 89               [ 2]  847 	pushw	x
+      000464 90 89            [ 2]  848 	pushw	y
+      000466 CDr00r00         [ 4]  849 	call	_assert_failed
+      000469 5B 06            [ 2]  850 	addw	sp, #6
+      00046B                        851 00115$:
+                                    852 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 463: assert_param(IS_CLK_IT_OK(CLK_IT));
+      00046B 7B 05            [ 1]  853 	ld	a, (0x05, sp)
+      00046D A1 0C            [ 1]  854 	cp	a, #0x0c
+      00046F 26 06            [ 1]  855 	jrne	00165$
+      000471 A6 01            [ 1]  856 	ld	a, #0x01
+      000473 6B 02            [ 1]  857 	ld	(0x02, sp), a
+      000475 20 02            [ 2]  858 	jra	00166$
+      000477                        859 00165$:
+      000477 0F 02            [ 1]  860 	clr	(0x02, sp)
+      000479                        861 00166$:
+      000479 7B 05            [ 1]  862 	ld	a, (0x05, sp)
+      00047B A1 1C            [ 1]  863 	cp	a, #0x1c
+      00047D 26 06            [ 1]  864 	jrne	00168$
+      00047F A6 01            [ 1]  865 	ld	a, #0x01
+      000481 6B 01            [ 1]  866 	ld	(0x01, sp), a
+      000483 20 02            [ 2]  867 	jra	00169$
+      000485                        868 00168$:
+      000485 0F 01            [ 1]  869 	clr	(0x01, sp)
+      000487                        870 00169$:
+      000487 0D 02            [ 1]  871 	tnz	(0x02, sp)
+      000489 26 15            [ 1]  872 	jrne	00120$
+      00048B 0D 01            [ 1]  873 	tnz	(0x01, sp)
+      00048D 26 11            [ 1]  874 	jrne	00120$
+      00048F 90 AEr07r75      [ 2]  875 	ldw	y, #___str_0+0
+      000493 4B CF            [ 1]  876 	push	#0xcf
+      000495 4B 01            [ 1]  877 	push	#0x01
+      000497 5F               [ 1]  878 	clrw	x
+      000498 89               [ 2]  879 	pushw	x
+      000499 90 89            [ 2]  880 	pushw	y
+      00049B CDr00r00         [ 4]  881 	call	_assert_failed
+      00049E 5B 06            [ 2]  882 	addw	sp, #6
+      0004A0                        883 00120$:
+                                    884 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 465: if (NewState != DISABLE)
+      0004A0 0D 06            [ 1]  885 	tnz	(0x06, sp)
+      0004A2 27 1A            [ 1]  886 	jreq	00110$
+                                    887 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 467: switch (CLK_IT)
+      0004A4 0D 02            [ 1]  888 	tnz	(0x02, sp)
+      0004A6 26 0D            [ 1]  889 	jrne	00102$
+      0004A8 0D 01            [ 1]  890 	tnz	(0x01, sp)
+      0004AA 27 2A            [ 1]  891 	jreq	00112$
+                                    892 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 470: CLK->SWCR |= CLK_SWCR_SWIEN;
+      0004AC AE 50 C5         [ 2]  893 	ldw	x, #0x50c5
+      0004AF F6               [ 1]  894 	ld	a, (x)
+      0004B0 AA 04            [ 1]  895 	or	a, #0x04
+      0004B2 F7               [ 1]  896 	ld	(x), a
+                                    897 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 471: break;
+      0004B3 20 21            [ 2]  898 	jra	00112$
+                                    899 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 472: case CLK_IT_CSSD: /* Enable the clock security system detection interrupt */
+      0004B5                        900 00102$:
+                                    901 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 473: CLK->CSSR |= CLK_CSSR_CSSDIE;
+      0004B5 AE 50 C8         [ 2]  902 	ldw	x, #0x50c8
+      0004B8 F6               [ 1]  903 	ld	a, (x)
+      0004B9 AA 04            [ 1]  904 	or	a, #0x04
+      0004BB F7               [ 1]  905 	ld	(x), a
+                                    906 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 474: break;
+      0004BC 20 18            [ 2]  907 	jra	00112$
+                                    908 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 477: }
+      0004BE                        909 00110$:
+                                    910 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 481: switch (CLK_IT)
+      0004BE 0D 02            [ 1]  911 	tnz	(0x02, sp)
+      0004C0 26 0D            [ 1]  912 	jrne	00106$
+      0004C2 0D 01            [ 1]  913 	tnz	(0x01, sp)
+      0004C4 27 10            [ 1]  914 	jreq	00112$
+                                    915 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 484: CLK->SWCR  &= (uint8_t)(~CLK_SWCR_SWIEN);
+      0004C6 AE 50 C5         [ 2]  916 	ldw	x, #0x50c5
+      0004C9 F6               [ 1]  917 	ld	a, (x)
+      0004CA A4 FB            [ 1]  918 	and	a, #0xfb
+      0004CC F7               [ 1]  919 	ld	(x), a
+                                    920 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 485: break;
+      0004CD 20 07            [ 2]  921 	jra	00112$
+                                    922 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 486: case CLK_IT_CSSD: /* Disable the clock security system detection interrupt */
+      0004CF                        923 00106$:
+                                    924 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 487: CLK->CSSR &= (uint8_t)(~CLK_CSSR_CSSDIE);
+      0004CF AE 50 C8         [ 2]  925 	ldw	x, #0x50c8
+      0004D2 F6               [ 1]  926 	ld	a, (x)
+      0004D3 A4 FB            [ 1]  927 	and	a, #0xfb
+      0004D5 F7               [ 1]  928 	ld	(x), a
+                                    929 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 491: }
+      0004D6                        930 00112$:
+      0004D6 85               [ 2]  931 	popw	x
+      0004D7 81               [ 4]  932 	ret
+                                    933 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 500: void CLK_SYSCLKConfig(CLK_Prescaler_TypeDef CLK_Prescaler)
+                                    934 ;	-----------------------------------------
+                                    935 ;	 function CLK_SYSCLKConfig
+                                    936 ;	-----------------------------------------
+      0004D8                        937 _CLK_SYSCLKConfig:
+      0004D8 89               [ 2]  938 	pushw	x
+                                    939 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 503: assert_param(IS_CLK_PRESCALER_OK(CLK_Prescaler));
+      0004D9 0D 05            [ 1]  940 	tnz	(0x05, sp)
+      0004DB 27 53            [ 1]  941 	jreq	00107$
+      0004DD 7B 05            [ 1]  942 	ld	a, (0x05, sp)
+      0004DF A1 08            [ 1]  943 	cp	a, #0x08
+      0004E1 27 4D            [ 1]  944 	jreq	00107$
+      0004E3 7B 05            [ 1]  945 	ld	a, (0x05, sp)
+      0004E5 A1 10            [ 1]  946 	cp	a, #0x10
+      0004E7 27 47            [ 1]  947 	jreq	00107$
+      0004E9 7B 05            [ 1]  948 	ld	a, (0x05, sp)
+      0004EB A1 18            [ 1]  949 	cp	a, #0x18
+      0004ED 27 41            [ 1]  950 	jreq	00107$
+      0004EF 7B 05            [ 1]  951 	ld	a, (0x05, sp)
+      0004F1 A1 80            [ 1]  952 	cp	a, #0x80
+      0004F3 27 3B            [ 1]  953 	jreq	00107$
+      0004F5 7B 05            [ 1]  954 	ld	a, (0x05, sp)
+      0004F7 A1 81            [ 1]  955 	cp	a, #0x81
+      0004F9 27 35            [ 1]  956 	jreq	00107$
+      0004FB 7B 05            [ 1]  957 	ld	a, (0x05, sp)
+      0004FD A1 82            [ 1]  958 	cp	a, #0x82
+      0004FF 27 2F            [ 1]  959 	jreq	00107$
+      000501 7B 05            [ 1]  960 	ld	a, (0x05, sp)
+      000503 A1 83            [ 1]  961 	cp	a, #0x83
+      000505 27 29            [ 1]  962 	jreq	00107$
+      000507 7B 05            [ 1]  963 	ld	a, (0x05, sp)
+      000509 A1 84            [ 1]  964 	cp	a, #0x84
+      00050B 27 23            [ 1]  965 	jreq	00107$
+      00050D 7B 05            [ 1]  966 	ld	a, (0x05, sp)
+      00050F A1 85            [ 1]  967 	cp	a, #0x85
+      000511 27 1D            [ 1]  968 	jreq	00107$
+      000513 7B 05            [ 1]  969 	ld	a, (0x05, sp)
+      000515 A1 86            [ 1]  970 	cp	a, #0x86
+      000517 27 17            [ 1]  971 	jreq	00107$
+      000519 7B 05            [ 1]  972 	ld	a, (0x05, sp)
+      00051B A1 87            [ 1]  973 	cp	a, #0x87
+      00051D 27 11            [ 1]  974 	jreq	00107$
+      00051F 90 AEr07r75      [ 2]  975 	ldw	y, #___str_0+0
+      000523 4B F7            [ 1]  976 	push	#0xf7
+      000525 4B 01            [ 1]  977 	push	#0x01
+      000527 5F               [ 1]  978 	clrw	x
+      000528 89               [ 2]  979 	pushw	x
+      000529 90 89            [ 2]  980 	pushw	y
+      00052B CDr00r00         [ 4]  981 	call	_assert_failed
+      00052E 5B 06            [ 2]  982 	addw	sp, #6
+      000530                        983 00107$:
+                                    984 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 505: if (((uint8_t)CLK_Prescaler & (uint8_t)0x80) == 0x00) /* Bit7 = 0 means HSI divider */
+      000530 0D 05            [ 1]  985 	tnz	(0x05, sp)
+      000532 2B 19            [ 1]  986 	jrmi	00102$
+                                    987 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 507: CLK->CKDIVR &= (uint8_t)(~CLK_CKDIVR_HSIDIV);
+      000534 AE 50 C6         [ 2]  988 	ldw	x, #0x50c6
+      000537 F6               [ 1]  989 	ld	a, (x)
+      000538 A4 E7            [ 1]  990 	and	a, #0xe7
+      00053A F7               [ 1]  991 	ld	(x), a
+                                    992 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 508: CLK->CKDIVR |= (uint8_t)((uint8_t)CLK_Prescaler & (uint8_t)CLK_CKDIVR_HSIDIV);
+      00053B AE 50 C6         [ 2]  993 	ldw	x, #0x50c6
+      00053E F6               [ 1]  994 	ld	a, (x)
+      00053F 6B 02            [ 1]  995 	ld	(0x02, sp), a
+      000541 7B 05            [ 1]  996 	ld	a, (0x05, sp)
+      000543 A4 18            [ 1]  997 	and	a, #0x18
+      000545 1A 02            [ 1]  998 	or	a, (0x02, sp)
+      000547 AE 50 C6         [ 2]  999 	ldw	x, #0x50c6
+      00054A F7               [ 1] 1000 	ld	(x), a
+      00054B 20 17            [ 2] 1001 	jra	00104$
+      00054D                       1002 00102$:
+                                   1003 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 512: CLK->CKDIVR &= (uint8_t)(~CLK_CKDIVR_CPUDIV);
+      00054D AE 50 C6         [ 2] 1004 	ldw	x, #0x50c6
+      000550 F6               [ 1] 1005 	ld	a, (x)
+      000551 A4 F8            [ 1] 1006 	and	a, #0xf8
+      000553 F7               [ 1] 1007 	ld	(x), a
+                                   1008 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 513: CLK->CKDIVR |= (uint8_t)((uint8_t)CLK_Prescaler & (uint8_t)CLK_CKDIVR_CPUDIV);
+      000554 AE 50 C6         [ 2] 1009 	ldw	x, #0x50c6
+      000557 F6               [ 1] 1010 	ld	a, (x)
+      000558 6B 01            [ 1] 1011 	ld	(0x01, sp), a
+      00055A 7B 05            [ 1] 1012 	ld	a, (0x05, sp)
+      00055C A4 07            [ 1] 1013 	and	a, #0x07
+      00055E 1A 01            [ 1] 1014 	or	a, (0x01, sp)
+      000560 AE 50 C6         [ 2] 1015 	ldw	x, #0x50c6
+      000563 F7               [ 1] 1016 	ld	(x), a
+      000564                       1017 00104$:
+      000564 85               [ 2] 1018 	popw	x
+      000565 81               [ 4] 1019 	ret
+                                   1020 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 523: void CLK_SWIMConfig(CLK_SWIMDivider_TypeDef CLK_SWIMDivider)
+                                   1021 ;	-----------------------------------------
+                                   1022 ;	 function CLK_SWIMConfig
+                                   1023 ;	-----------------------------------------
+      000566                       1024 _CLK_SWIMConfig:
+                                   1025 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 526: assert_param(IS_CLK_SWIMDIVIDER_OK(CLK_SWIMDivider));
+      000566 0D 03            [ 1] 1026 	tnz	(0x03, sp)
+      000568 27 17            [ 1] 1027 	jreq	00107$
+      00056A 7B 03            [ 1] 1028 	ld	a, (0x03, sp)
+      00056C A1 01            [ 1] 1029 	cp	a, #0x01
+      00056E 27 11            [ 1] 1030 	jreq	00107$
+      000570 90 AEr07r75      [ 2] 1031 	ldw	y, #___str_0+0
+      000574 4B 0E            [ 1] 1032 	push	#0x0e
+      000576 4B 02            [ 1] 1033 	push	#0x02
+      000578 5F               [ 1] 1034 	clrw	x
+      000579 89               [ 2] 1035 	pushw	x
+      00057A 90 89            [ 2] 1036 	pushw	y
+      00057C CDr00r00         [ 4] 1037 	call	_assert_failed
+      00057F 5B 06            [ 2] 1038 	addw	sp, #6
+      000581                       1039 00107$:
+                                   1040 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 528: if (CLK_SWIMDivider != CLK_SWIMDIVIDER_2)
+      000581 0D 03            [ 1] 1041 	tnz	(0x03, sp)
+      000583 27 06            [ 1] 1042 	jreq	00102$
+                                   1043 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 531: CLK->SWIMCCR |= CLK_SWIMCCR_SWIMDIV;
+      000585 72 10 50 CD      [ 1] 1044 	bset	0x50cd, #0
+      000589 20 04            [ 2] 1045 	jra	00104$
+      00058B                       1046 00102$:
+                                   1047 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 536: CLK->SWIMCCR &= (uint8_t)(~CLK_SWIMCCR_SWIMDIV);
+      00058B 72 11 50 CD      [ 1] 1048 	bres	0x50cd, #0
+      00058F                       1049 00104$:
+      00058F 81               [ 4] 1050 	ret
+                                   1051 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 547: void CLK_ClockSecuritySystemEnable(void)
+                                   1052 ;	-----------------------------------------
+                                   1053 ;	 function CLK_ClockSecuritySystemEnable
+                                   1054 ;	-----------------------------------------
+      000590                       1055 _CLK_ClockSecuritySystemEnable:
+                                   1056 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 550: CLK->CSSR |= CLK_CSSR_CSSEN;
+      000590 72 10 50 C8      [ 1] 1057 	bset	0x50c8, #0
+      000594 81               [ 4] 1058 	ret
+                                   1059 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 559: CLK_Source_TypeDef CLK_GetSYSCLKSource(void)
+                                   1060 ;	-----------------------------------------
+                                   1061 ;	 function CLK_GetSYSCLKSource
+                                   1062 ;	-----------------------------------------
+      000595                       1063 _CLK_GetSYSCLKSource:
+                                   1064 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 561: return((CLK_Source_TypeDef)CLK->CMSR);
+      000595 AE 50 C3         [ 2] 1065 	ldw	x, #0x50c3
+      000598 F6               [ 1] 1066 	ld	a, (x)
+      000599 81               [ 4] 1067 	ret
+                                   1068 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 569: uint32_t CLK_GetClockFreq(void)
+                                   1069 ;	-----------------------------------------
+                                   1070 ;	 function CLK_GetClockFreq
+                                   1071 ;	-----------------------------------------
+      00059A                       1072 _CLK_GetClockFreq:
+      00059A 52 07            [ 2] 1073 	sub	sp, #7
+                                   1074 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 576: clocksource = (CLK_Source_TypeDef)CLK->CMSR;
+      00059C AE 50 C3         [ 2] 1075 	ldw	x, #0x50c3
+      00059F F6               [ 1] 1076 	ld	a, (x)
+      0005A0 6B 01            [ 1] 1077 	ld	(0x01, sp), a
+                                   1078 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 578: if (clocksource == CLK_SOURCE_HSI)
+      0005A2 7B 01            [ 1] 1079 	ld	a, (0x01, sp)
+      0005A4 A1 E1            [ 1] 1080 	cp	a, #0xe1
+      0005A6 26 2C            [ 1] 1081 	jrne	00105$
+                                   1082 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 580: tmp = (uint8_t)(CLK->CKDIVR & CLK_CKDIVR_HSIDIV);
+      0005A8 AE 50 C6         [ 2] 1083 	ldw	x, #0x50c6
+      0005AB F6               [ 1] 1084 	ld	a, (x)
+      0005AC A4 18            [ 1] 1085 	and	a, #0x18
+                                   1086 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 581: tmp = (uint8_t)(tmp >> 3);
+      0005AE 44               [ 1] 1087 	srl	a
+      0005AF 44               [ 1] 1088 	srl	a
+      0005B0 44               [ 1] 1089 	srl	a
+                                   1090 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 582: presc = HSIDivFactor[tmp];
+      0005B1 AEr07r69         [ 2] 1091 	ldw	x, #_HSIDivFactor+0
+      0005B4 1F 06            [ 2] 1092 	ldw	(0x06, sp), x
+      0005B6 5F               [ 1] 1093 	clrw	x
+      0005B7 97               [ 1] 1094 	ld	xl, a
+      0005B8 72 FB 06         [ 2] 1095 	addw	x, (0x06, sp)
+      0005BB F6               [ 1] 1096 	ld	a, (x)
+                                   1097 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 583: clockfrequency = HSI_VALUE / presc;
+      0005BC 5F               [ 1] 1098 	clrw	x
+      0005BD 97               [ 1] 1099 	ld	xl, a
+      0005BE 90 5F            [ 1] 1100 	clrw	y
+      0005C0 89               [ 2] 1101 	pushw	x
+      0005C1 90 89            [ 2] 1102 	pushw	y
+      0005C3 4B 00            [ 1] 1103 	push	#0x00
+      0005C5 4B 24            [ 1] 1104 	push	#0x24
+      0005C7 4B F4            [ 1] 1105 	push	#0xf4
+      0005C9 4B 00            [ 1] 1106 	push	#0x00
+      0005CB CDr00r00         [ 4] 1107 	call	__divulong
+      0005CE 5B 08            [ 2] 1108 	addw	sp, #8
+      0005D0 1F 04            [ 2] 1109 	ldw	(0x04, sp), x
+      0005D2 20 1A            [ 2] 1110 	jra	00106$
+      0005D4                       1111 00105$:
+                                   1112 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 585: else if ( clocksource == CLK_SOURCE_LSI)
+      0005D4 7B 01            [ 1] 1113 	ld	a, (0x01, sp)
+      0005D6 A1 D2            [ 1] 1114 	cp	a, #0xd2
+      0005D8 26 0B            [ 1] 1115 	jrne	00102$
+                                   1116 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 587: clockfrequency = LSI_VALUE;
+      0005DA AE F4 00         [ 2] 1117 	ldw	x, #0xf400
+      0005DD 1F 04            [ 2] 1118 	ldw	(0x04, sp), x
+      0005DF 90 AE 00 01      [ 2] 1119 	ldw	y, #0x0001
+      0005E3 20 09            [ 2] 1120 	jra	00106$
+      0005E5                       1121 00102$:
+                                   1122 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 591: clockfrequency = HSE_VALUE;
+      0005E5 AE 24 00         [ 2] 1123 	ldw	x, #0x2400
+      0005E8 1F 04            [ 2] 1124 	ldw	(0x04, sp), x
+      0005EA 90 AE 00 F4      [ 2] 1125 	ldw	y, #0x00f4
+      0005EE                       1126 00106$:
+                                   1127 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 594: return((uint32_t)clockfrequency);
+      0005EE 1E 04            [ 2] 1128 	ldw	x, (0x04, sp)
+      0005F0 5B 07            [ 2] 1129 	addw	sp, #7
+      0005F2 81               [ 4] 1130 	ret
+                                   1131 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 604: void CLK_AdjustHSICalibrationValue(CLK_HSITrimValue_TypeDef CLK_HSICalibrationValue)
+                                   1132 ;	-----------------------------------------
+                                   1133 ;	 function CLK_AdjustHSICalibrationValue
+                                   1134 ;	-----------------------------------------
+      0005F3                       1135 _CLK_AdjustHSICalibrationValue:
+                                   1136 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 607: assert_param(IS_CLK_HSITRIMVALUE_OK(CLK_HSICalibrationValue));
+      0005F3 0D 03            [ 1] 1137 	tnz	(0x03, sp)
+      0005F5 27 3B            [ 1] 1138 	jreq	00104$
+      0005F7 7B 03            [ 1] 1139 	ld	a, (0x03, sp)
+      0005F9 A1 01            [ 1] 1140 	cp	a, #0x01
+      0005FB 27 35            [ 1] 1141 	jreq	00104$
+      0005FD 7B 03            [ 1] 1142 	ld	a, (0x03, sp)
+      0005FF A1 02            [ 1] 1143 	cp	a, #0x02
+      000601 27 2F            [ 1] 1144 	jreq	00104$
+      000603 7B 03            [ 1] 1145 	ld	a, (0x03, sp)
+      000605 A1 03            [ 1] 1146 	cp	a, #0x03
+      000607 27 29            [ 1] 1147 	jreq	00104$
+      000609 7B 03            [ 1] 1148 	ld	a, (0x03, sp)
+      00060B A1 04            [ 1] 1149 	cp	a, #0x04
+      00060D 27 23            [ 1] 1150 	jreq	00104$
+      00060F 7B 03            [ 1] 1151 	ld	a, (0x03, sp)
+      000611 A1 05            [ 1] 1152 	cp	a, #0x05
+      000613 27 1D            [ 1] 1153 	jreq	00104$
+      000615 7B 03            [ 1] 1154 	ld	a, (0x03, sp)
+      000617 A1 06            [ 1] 1155 	cp	a, #0x06
+      000619 27 17            [ 1] 1156 	jreq	00104$
+      00061B 7B 03            [ 1] 1157 	ld	a, (0x03, sp)
+      00061D A1 07            [ 1] 1158 	cp	a, #0x07
+      00061F 27 11            [ 1] 1159 	jreq	00104$
+      000621 90 AEr07r75      [ 2] 1160 	ldw	y, #___str_0+0
+      000625 4B 5F            [ 1] 1161 	push	#0x5f
+      000627 4B 02            [ 1] 1162 	push	#0x02
+      000629 5F               [ 1] 1163 	clrw	x
+      00062A 89               [ 2] 1164 	pushw	x
+      00062B 90 89            [ 2] 1165 	pushw	y
+      00062D CDr00r00         [ 4] 1166 	call	_assert_failed
+      000630 5B 06            [ 2] 1167 	addw	sp, #6
+      000632                       1168 00104$:
+                                   1169 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 610: CLK->HSITRIMR = (uint8_t)( (uint8_t)(CLK->HSITRIMR & (uint8_t)(~CLK_HSITRIMR_HSITRIM))|((uint8_t)CLK_HSICalibrationValue));
+      000632 AE 50 CC         [ 2] 1170 	ldw	x, #0x50cc
+      000635 F6               [ 1] 1171 	ld	a, (x)
+      000636 A4 F8            [ 1] 1172 	and	a, #0xf8
+      000638 1A 03            [ 1] 1173 	or	a, (0x03, sp)
+      00063A AE 50 CC         [ 2] 1174 	ldw	x, #0x50cc
+      00063D F7               [ 1] 1175 	ld	(x), a
+      00063E 81               [ 4] 1176 	ret
+                                   1177 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 622: void CLK_SYSCLKEmergencyClear(void)
+                                   1178 ;	-----------------------------------------
+                                   1179 ;	 function CLK_SYSCLKEmergencyClear
+                                   1180 ;	-----------------------------------------
+      00063F                       1181 _CLK_SYSCLKEmergencyClear:
+                                   1182 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 624: CLK->SWCR &= (uint8_t)(~CLK_SWCR_SWBSY);
+      00063F 72 11 50 C5      [ 1] 1183 	bres	0x50c5, #0
+      000643 81               [ 4] 1184 	ret
+                                   1185 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 634: FlagStatus CLK_GetFlagStatus(CLK_Flag_TypeDef CLK_FLAG)
+                                   1186 ;	-----------------------------------------
+                                   1187 ;	 function CLK_GetFlagStatus
+                                   1188 ;	-----------------------------------------
+      000644                       1189 _CLK_GetFlagStatus:
+                                   1190 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 641: assert_param(IS_CLK_FLAG_OK(CLK_FLAG));
+      000644 1E 03            [ 2] 1191 	ldw	x, (0x03, sp)
+      000646 A3 01 10         [ 2] 1192 	cpw	x, #0x0110
+      000649 27 49            [ 1] 1193 	jreq	00119$
+      00064B 1E 03            [ 2] 1194 	ldw	x, (0x03, sp)
+      00064D A3 01 02         [ 2] 1195 	cpw	x, #0x0102
+      000650 27 42            [ 1] 1196 	jreq	00119$
+      000652 1E 03            [ 2] 1197 	ldw	x, (0x03, sp)
+      000654 A3 02 02         [ 2] 1198 	cpw	x, #0x0202
+      000657 27 3B            [ 1] 1199 	jreq	00119$
+      000659 1E 03            [ 2] 1200 	ldw	x, (0x03, sp)
+      00065B A3 03 08         [ 2] 1201 	cpw	x, #0x0308
+      00065E 27 34            [ 1] 1202 	jreq	00119$
+      000660 1E 03            [ 2] 1203 	ldw	x, (0x03, sp)
+      000662 A3 03 01         [ 2] 1204 	cpw	x, #0x0301
+      000665 27 2D            [ 1] 1205 	jreq	00119$
+      000667 1E 03            [ 2] 1206 	ldw	x, (0x03, sp)
+      000669 A3 04 08         [ 2] 1207 	cpw	x, #0x0408
+      00066C 27 26            [ 1] 1208 	jreq	00119$
+      00066E 1E 03            [ 2] 1209 	ldw	x, (0x03, sp)
+      000670 A3 04 02         [ 2] 1210 	cpw	x, #0x0402
+      000673 27 1F            [ 1] 1211 	jreq	00119$
+      000675 1E 03            [ 2] 1212 	ldw	x, (0x03, sp)
+      000677 A3 05 04         [ 2] 1213 	cpw	x, #0x0504
+      00067A 27 18            [ 1] 1214 	jreq	00119$
+      00067C 1E 03            [ 2] 1215 	ldw	x, (0x03, sp)
+      00067E A3 05 02         [ 2] 1216 	cpw	x, #0x0502
+      000681 27 11            [ 1] 1217 	jreq	00119$
+      000683 90 AEr07r75      [ 2] 1218 	ldw	y, #___str_0+0
+      000687 4B 81            [ 1] 1219 	push	#0x81
+      000689 4B 02            [ 1] 1220 	push	#0x02
+      00068B 5F               [ 1] 1221 	clrw	x
+      00068C 89               [ 2] 1222 	pushw	x
+      00068D 90 89            [ 2] 1223 	pushw	y
+      00068F CDr00r00         [ 4] 1224 	call	_assert_failed
+      000692 5B 06            [ 2] 1225 	addw	sp, #6
+      000694                       1226 00119$:
+                                   1227 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 644: statusreg = (uint16_t)((uint16_t)CLK_FLAG & (uint16_t)0xFF00);
+      000694 4F               [ 1] 1228 	clr	a
+      000695 97               [ 1] 1229 	ld	xl, a
+      000696 7B 03            [ 1] 1230 	ld	a, (0x03, sp)
+      000698 95               [ 1] 1231 	ld	xh, a
+                                   1232 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 647: if (statusreg == 0x0100) /* The flag to check is in ICKRregister */
+      000699 A3 01 00         [ 2] 1233 	cpw	x, #0x0100
+      00069C 26 06            [ 1] 1234 	jrne	00111$
+                                   1235 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 649: tmpreg = CLK->ICKR;
+      00069E AE 50 C0         [ 2] 1236 	ldw	x, #0x50c0
+      0006A1 F6               [ 1] 1237 	ld	a, (x)
+      0006A2 20 25            [ 2] 1238 	jra	00112$
+      0006A4                       1239 00111$:
+                                   1240 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 651: else if (statusreg == 0x0200) /* The flag to check is in ECKRregister */
+      0006A4 A3 02 00         [ 2] 1241 	cpw	x, #0x0200
+      0006A7 26 06            [ 1] 1242 	jrne	00108$
+                                   1243 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 653: tmpreg = CLK->ECKR;
+      0006A9 AE 50 C1         [ 2] 1244 	ldw	x, #0x50c1
+      0006AC F6               [ 1] 1245 	ld	a, (x)
+      0006AD 20 1A            [ 2] 1246 	jra	00112$
+      0006AF                       1247 00108$:
+                                   1248 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 655: else if (statusreg == 0x0300) /* The flag to check is in SWIC register */
+      0006AF A3 03 00         [ 2] 1249 	cpw	x, #0x0300
+      0006B2 26 06            [ 1] 1250 	jrne	00105$
+                                   1251 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 657: tmpreg = CLK->SWCR;
+      0006B4 AE 50 C5         [ 2] 1252 	ldw	x, #0x50c5
+      0006B7 F6               [ 1] 1253 	ld	a, (x)
+      0006B8 20 0F            [ 2] 1254 	jra	00112$
+      0006BA                       1255 00105$:
+                                   1256 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 659: else if (statusreg == 0x0400) /* The flag to check is in CSS register */
+      0006BA A3 04 00         [ 2] 1257 	cpw	x, #0x0400
+      0006BD 26 06            [ 1] 1258 	jrne	00102$
+                                   1259 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 661: tmpreg = CLK->CSSR;
+      0006BF AE 50 C8         [ 2] 1260 	ldw	x, #0x50c8
+      0006C2 F6               [ 1] 1261 	ld	a, (x)
+      0006C3 20 04            [ 2] 1262 	jra	00112$
+      0006C5                       1263 00102$:
+                                   1264 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 665: tmpreg = CLK->CCOR;
+      0006C5 AE 50 C9         [ 2] 1265 	ldw	x, #0x50c9
+      0006C8 F6               [ 1] 1266 	ld	a, (x)
+      0006C9                       1267 00112$:
+                                   1268 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 668: if ((tmpreg & (uint8_t)CLK_FLAG) != (uint8_t)RESET)
+      0006C9 02               [ 1] 1269 	rlwa	x
+      0006CA 7B 04            [ 1] 1270 	ld	a, (0x04, sp)
+      0006CC 01               [ 1] 1271 	rrwa	x
+      0006CD 89               [ 2] 1272 	pushw	x
+      0006CE 14 01            [ 1] 1273 	and	a, (1, sp)
+      0006D0 85               [ 2] 1274 	popw	x
+      0006D1 4D               [ 1] 1275 	tnz	a
+      0006D2 27 03            [ 1] 1276 	jreq	00114$
+                                   1277 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 670: bitstatus = SET;
+      0006D4 A6 01            [ 1] 1278 	ld	a, #0x01
+                                   1279 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 674: bitstatus = RESET;
+      0006D6 21                    1280 	.byte 0x21
+      0006D7                       1281 00114$:
+      0006D7 4F               [ 1] 1282 	clr	a
+      0006D8                       1283 00115$:
+                                   1284 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 678: return((FlagStatus)bitstatus);
+      0006D8 81               [ 4] 1285 	ret
+                                   1286 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 687: ITStatus CLK_GetITStatus(CLK_IT_TypeDef CLK_IT)
+                                   1287 ;	-----------------------------------------
+                                   1288 ;	 function CLK_GetITStatus
+                                   1289 ;	-----------------------------------------
+      0006D9                       1290 _CLK_GetITStatus:
+      0006D9 88               [ 1] 1291 	push	a
+                                   1292 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 692: assert_param(IS_CLK_IT_OK(CLK_IT));
+      0006DA 7B 04            [ 1] 1293 	ld	a, (0x04, sp)
+      0006DC A1 1C            [ 1] 1294 	cp	a, #0x1c
+      0006DE 26 06            [ 1] 1295 	jrne	00138$
+      0006E0 A6 01            [ 1] 1296 	ld	a, #0x01
+      0006E2 6B 01            [ 1] 1297 	ld	(0x01, sp), a
+      0006E4 20 02            [ 2] 1298 	jra	00139$
+      0006E6                       1299 00138$:
+      0006E6 0F 01            [ 1] 1300 	clr	(0x01, sp)
+      0006E8                       1301 00139$:
+      0006E8 7B 04            [ 1] 1302 	ld	a, (0x04, sp)
+      0006EA A1 0C            [ 1] 1303 	cp	a, #0x0c
+      0006EC 27 15            [ 1] 1304 	jreq	00113$
+      0006EE 0D 01            [ 1] 1305 	tnz	(0x01, sp)
+      0006F0 26 11            [ 1] 1306 	jrne	00113$
+      0006F2 90 AEr07r75      [ 2] 1307 	ldw	y, #___str_0+0
+      0006F6 4B B4            [ 1] 1308 	push	#0xb4
+      0006F8 4B 02            [ 1] 1309 	push	#0x02
+      0006FA 5F               [ 1] 1310 	clrw	x
+      0006FB 89               [ 2] 1311 	pushw	x
+      0006FC 90 89            [ 2] 1312 	pushw	y
+      0006FE CDr00r00         [ 4] 1313 	call	_assert_failed
+      000701 5B 06            [ 2] 1314 	addw	sp, #6
+      000703                       1315 00113$:
+                                   1316 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 694: if (CLK_IT == CLK_IT_SWIF)
+      000703 0D 01            [ 1] 1317 	tnz	(0x01, sp)
+      000705 27 11            [ 1] 1318 	jreq	00108$
+                                   1319 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 697: if ((CLK->SWCR & (uint8_t)CLK_IT) == (uint8_t)0x0C)
+      000707 AE 50 C5         [ 2] 1320 	ldw	x, #0x50c5
+      00070A F6               [ 1] 1321 	ld	a, (x)
+      00070B 14 04            [ 1] 1322 	and	a, (0x04, sp)
+      00070D A1 0C            [ 1] 1323 	cp	a, #0x0c
+      00070F 26 04            [ 1] 1324 	jrne	00102$
+                                   1325 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 699: bitstatus = SET;
+      000711 A6 01            [ 1] 1326 	ld	a, #0x01
+      000713 20 11            [ 2] 1327 	jra	00109$
+      000715                       1328 00102$:
+                                   1329 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 703: bitstatus = RESET;
+      000715 4F               [ 1] 1330 	clr	a
+      000716 20 0E            [ 2] 1331 	jra	00109$
+      000718                       1332 00108$:
+                                   1333 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 709: if ((CLK->CSSR & (uint8_t)CLK_IT) == (uint8_t)0x0C)
+      000718 AE 50 C8         [ 2] 1334 	ldw	x, #0x50c8
+      00071B F6               [ 1] 1335 	ld	a, (x)
+      00071C 14 04            [ 1] 1336 	and	a, (0x04, sp)
+      00071E A1 0C            [ 1] 1337 	cp	a, #0x0c
+      000720 26 03            [ 1] 1338 	jrne	00105$
+                                   1339 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 711: bitstatus = SET;
+      000722 A6 01            [ 1] 1340 	ld	a, #0x01
+                                   1341 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 715: bitstatus = RESET;
+      000724 21                    1342 	.byte 0x21
+      000725                       1343 00105$:
+      000725 4F               [ 1] 1344 	clr	a
+      000726                       1345 00109$:
+                                   1346 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 720: return bitstatus;
+      000726 5B 01            [ 2] 1347 	addw	sp, #1
+      000728 81               [ 4] 1348 	ret
+                                   1349 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 729: void CLK_ClearITPendingBit(CLK_IT_TypeDef CLK_IT)
+                                   1350 ;	-----------------------------------------
+                                   1351 ;	 function CLK_ClearITPendingBit
+                                   1352 ;	-----------------------------------------
+      000729                       1353 _CLK_ClearITPendingBit:
+      000729 88               [ 1] 1354 	push	a
+                                   1355 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 732: assert_param(IS_CLK_IT_OK(CLK_IT));
+      00072A 7B 04            [ 1] 1356 	ld	a, (0x04, sp)
+      00072C A1 0C            [ 1] 1357 	cp	a, #0x0c
+      00072E 26 06            [ 1] 1358 	jrne	00124$
+      000730 A6 01            [ 1] 1359 	ld	a, #0x01
+      000732 6B 01            [ 1] 1360 	ld	(0x01, sp), a
+      000734 20 02            [ 2] 1361 	jra	00125$
+      000736                       1362 00124$:
+      000736 0F 01            [ 1] 1363 	clr	(0x01, sp)
+      000738                       1364 00125$:
+      000738 0D 01            [ 1] 1365 	tnz	(0x01, sp)
+      00073A 26 17            [ 1] 1366 	jrne	00107$
+      00073C 7B 04            [ 1] 1367 	ld	a, (0x04, sp)
+      00073E A1 1C            [ 1] 1368 	cp	a, #0x1c
+      000740 27 11            [ 1] 1369 	jreq	00107$
+      000742 90 AEr07r75      [ 2] 1370 	ldw	y, #___str_0+0
+      000746 4B DC            [ 1] 1371 	push	#0xdc
+      000748 4B 02            [ 1] 1372 	push	#0x02
+      00074A 5F               [ 1] 1373 	clrw	x
+      00074B 89               [ 2] 1374 	pushw	x
+      00074C 90 89            [ 2] 1375 	pushw	y
+      00074E CDr00r00         [ 4] 1376 	call	_assert_failed
+      000751 5B 06            [ 2] 1377 	addw	sp, #6
+      000753                       1378 00107$:
+                                   1379 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 734: if (CLK_IT == (uint8_t)CLK_IT_CSSD)
+      000753 0D 01            [ 1] 1380 	tnz	(0x01, sp)
+      000755 27 09            [ 1] 1381 	jreq	00102$
+                                   1382 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 737: CLK->CSSR &= (uint8_t)(~CLK_CSSR_CSSD);
+      000757 AE 50 C8         [ 2] 1383 	ldw	x, #0x50c8
+      00075A F6               [ 1] 1384 	ld	a, (x)
+      00075B A4 F7            [ 1] 1385 	and	a, #0xf7
+      00075D F7               [ 1] 1386 	ld	(x), a
+      00075E 20 07            [ 2] 1387 	jra	00104$
+      000760                       1388 00102$:
+                                   1389 ;	/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver/src/stm8s003/stm8s_clk.c: 742: CLK->SWCR &= (uint8_t)(~CLK_SWCR_SWIF);
+      000760 AE 50 C5         [ 2] 1390 	ldw	x, #0x50c5
+      000763 F6               [ 1] 1391 	ld	a, (x)
+      000764 A4 F7            [ 1] 1392 	and	a, #0xf7
+      000766 F7               [ 1] 1393 	ld	(x), a
+      000767                       1394 00104$:
+      000767 84               [ 1] 1395 	pop	a
+      000768 81               [ 4] 1396 	ret
+                                   1397 	.area CODE
+      000769                       1398 _HSIDivFactor:
+      000769 01                    1399 	.db #0x01	; 1
+      00076A 02                    1400 	.db #0x02	; 2
+      00076B 04                    1401 	.db #0x04	; 4
+      00076C 08                    1402 	.db #0x08	; 8
+      00076D                       1403 _CLKPrescTable:
+      00076D 01                    1404 	.db #0x01	; 1
+      00076E 02                    1405 	.db #0x02	; 2
+      00076F 04                    1406 	.db #0x04	; 4
+      000770 08                    1407 	.db #0x08	; 8
+      000771 0A                    1408 	.db #0x0A	; 10
+      000772 10                    1409 	.db #0x10	; 16
+      000773 14                    1410 	.db #0x14	; 20
+      000774 28                    1411 	.db #0x28	; 40
+      000775                       1412 ___str_0:
+      000775 2F 68 6F 6D 65 2F 64  1413 	.ascii "/home/dongviet/project/2016/tool/stm8/STM8S_StdPeriph_Driver"
+             6F 6E 67 76 69 65 74
+             2F 70 72 6F 6A 65 63
+             74 2F 32 30 31 36 2F
+             74 6F 6F 6C 2F 73 74
+             6D 38 2F 53 54 4D 38
+             53 5F 53 74 64 50 65
+             72 69 70 68 5F 44 72
+             69 76 65 72
+      0007B1 2F 73 72 63 2F 73 74  1414 	.ascii "/src/stm8s003/stm8s_clk.c"
+             6D 38 73 30 30 33 2F
+             73 74 6D 38 73 5F 63
+             6C 6B 2E 63
+      0007CA 00                    1415 	.db 0x00
+                                   1416 	.area INITIALIZER
+                                   1417 	.area CABS (ABS)
